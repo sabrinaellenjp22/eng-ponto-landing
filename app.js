@@ -45,6 +45,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  /* 02b. TÍTULO DINÂMICO DO HERO (efeito de digitação) */
+  const heroRotatingWord = document.getElementById('hero-rotating-word');
+  if (heroRotatingWord && !prefersReducedMotion) {
+    const heroWords = ['do celular.', 'do computador.', 'do totem.', 'de onde estiver.'];
+    let heroWordIndex = heroWords.length - 1; // já exibida no HTML estático
+    let heroCharIndex = heroWords[heroWordIndex].length;
+
+    function typeHeroWord() {
+      const word = heroWords[heroWordIndex];
+      heroCharIndex++;
+      heroRotatingWord.textContent = word.slice(0, heroCharIndex);
+      if (heroCharIndex < word.length) {
+        setTimeout(typeHeroWord, 110);
+      } else {
+        setTimeout(deleteHeroWord, 2600);
+      }
+    }
+
+    function deleteHeroWord() {
+      const word = heroWords[heroWordIndex];
+      heroCharIndex--;
+      heroRotatingWord.textContent = word.slice(0, heroCharIndex);
+      if (heroCharIndex > 0) {
+        setTimeout(deleteHeroWord, 55);
+      } else {
+        heroWordIndex = (heroWordIndex + 1) % heroWords.length;
+        setTimeout(typeHeroWord, 400);
+      }
+    }
+
+    setTimeout(deleteHeroWord, 2600);
+  }
+
+
   /* 03. ABAS REAIS DE "COMO FUNCIONA" */
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');

@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=26">
+  <link rel="stylesheet" href="styles.css?v=46">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -120,102 +120,31 @@
 
   <!-- 01. HERO -->
   <section id="hero" class="section">
-    <div class="texture-rings" aria-hidden="true"></div>
+    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-hero" aria-hidden="true">
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img src="assets/hero-photo.png" alt="Colaborador batendo o ponto pelo celular em um ambiente de escritório" class="hero-photo">
+      </div>
+
+      <div class="hero-badge hero-badge-camera" aria-hidden="true" title="Reconhecimento facial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2h6l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="14" r="3.4"/></svg>
+      </div>
+      <div class="hero-badge hero-badge-phone" aria-hidden="true" title="App no celular">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+      </div>
+      <div class="hero-badge hero-badge-laptop" aria-hidden="true" title="Navegador (Web)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+      </div>
+    </div>
+
     <div class="container hero-grid">
       <div class="hero-content">
-        <h1>Bata o ponto <span class="h1-underline">de onde estiver.</span></h1>
+        <h1>Registre seu ponto<br><span class="h1-underline"><span id="hero-rotating-word">de onde estiver.</span></span></h1>
         <p class="lead">Pelo celular, pelo navegador ou no totem da empresa — sua equipe escolhe, e você não precisa comprar relógio nenhum. A apuração roda sozinha e fecha o mês em um clique.</p>
         <div class="hero-ctas">
           <a href="#modos" class="btn btn-primary">Ver como funciona <span class="arrow" aria-hidden="true">→</span></a>
           <!-- TODO: substituir pelo número real do WhatsApp -->
           <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-ghost">Falar no WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="window-mock">
-          <div class="window-bar">
-            <div class="window-dots">
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-            </div>
-            <div class="window-url">engponto.com.br/apuracao</div>
-            <div class="window-clock" id="hero-clock">16:43:52</div>
-          </div>
-          <div class="hero-mock-content">
-            <div class="mock-subhead">
-              <span>Marcações de hoje</span>
-              <span>15 set 2026</span>
-            </div>
-            <div class="punch-list">
-              <div class="punch-row">
-                <div class="punch-user">
-                  <div class="avatar">CM</div>
-                  <span class="user-name">Carla Mendes</span>
-                </div>
-                <div class="punch-details">
-                  <span class="chip">Facial</span>
-                  <span class="punch-time">07:58</span>
-                </div>
-              </div>
-
-              <div class="punch-row">
-                <div class="punch-user">
-                  <div class="avatar">RL</div>
-                  <span class="user-name">Roberto Lima</span>
-                </div>
-                <div class="punch-details">
-                  <span class="chip">App</span>
-                  <span class="chip">GPS</span>
-                  <span class="punch-time">08:01</span>
-                </div>
-              </div>
-
-              <div class="punch-row">
-                <div class="punch-user">
-                  <div class="avatar">JS</div>
-                  <span class="user-name">João Silva</span>
-                </div>
-                <div class="punch-details">
-                  <span class="chip">Totem</span>
-                  <span class="punch-time">08:03</span>
-                </div>
-              </div>
-
-              <div class="punch-row">
-                <div class="punch-user">
-                  <div class="avatar">LS</div>
-                  <span class="user-name">Luana Suzano</span>
-                </div>
-                <div class="punch-details">
-                  <span class="chip">Rede</span>
-                  <span class="chip">matriz</span>
-                  <span class="punch-time">08:05</span>
-                </div>
-              </div>
-
-              <div class="punch-row">
-                <div class="punch-user">
-                  <div class="avatar">MB</div>
-                  <span class="user-name">Marcelo Bueno</span>
-                </div>
-                <div class="punch-details">
-                  <span class="chip chip-ok">Justificado</span>
-                  <span class="punch-time">Abonado</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Flutuante com Dado Real -->
-        <div class="floating-card">
-          <div class="floating-icon" aria-hidden="true">✓</div>
-          <div>
-            <div class="floating-text-primary">AFD de agosto assinado</div>
-            <div class="floating-text-secondary">PKCS nº 7 · íntegro</div>
-          </div>
         </div>
       </div>
     </div>
@@ -232,30 +161,36 @@
 
       <div class="modos-grid">
         <div class="modos-card reveal-on-scroll">
-          <div class="modos-icon modos-icon-app" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+          <div class="modos-card-visual">
+            <img src="assets/modos-icon-app.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
-          <h3>App no celular</h3>
-          <span class="modos-card-tag">Reconhecimento facial + GPS</span>
-          <p class="modos-card-desc-text">Cada colaborador registra o ponto pelo próprio celular, com verificação facial e localização. Ideal pra equipes externas e em campo.</p>
+          <div class="modos-card-body">
+            <h3>App no celular</h3>
+            <span class="modos-card-tag">Reconhecimento facial + GPS</span>
+            <p class="modos-card-desc-text">Cada colaborador registra o ponto pelo próprio celular, com verificação facial e localização. Ideal pra equipes externas e em campo.</p>
+          </div>
         </div>
 
         <div class="modos-card reveal-on-scroll">
-          <div class="modos-icon modos-icon-web" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+          <div class="modos-card-visual">
+            <img src="assets/modos-icon-totem.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
-          <h3>Navegador (Web)</h3>
-          <span class="modos-card-tag">Direto do computador, sem instalar nada</span>
-          <p class="modos-card-desc-text">Quem está no escritório registra pelo navegador, com a validação de rede ou de local que você configurar.</p>
+          <div class="modos-card-body">
+            <h3>Totem físico</h3>
+            <span class="modos-card-tag">Um ponto fixo pra toda a equipe</span>
+            <p class="modos-card-desc-text">Pra quem prefere um ponto fixo na entrada: a plataforma também administra o totem, sem comprar relógio separado.</p>
+          </div>
         </div>
 
-        <div class="modos-card reveal-on-scroll">
-          <div class="modos-icon modos-icon-totem" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="14" rx="1.5"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+        <div class="modos-card modos-card-stacked reveal-on-scroll">
+          <div class="modos-card-visual">
+            <img src="assets/modos-icon-web.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
-          <h3>Totem físico</h3>
-          <span class="modos-card-tag">Um ponto fixo pra toda a equipe</span>
-          <p class="modos-card-desc-text">Pra quem prefere um ponto fixo na entrada: a plataforma também administra o totem, sem comprar relógio separado.</p>
+          <div class="modos-card-body">
+            <h3>Navegador (Web)</h3>
+            <span class="modos-card-tag">Direto do computador</span>
+            <p class="modos-card-desc-text">Quem está no escritório registra pelo navegador, com a validação de rede ou de local que você configurar.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -264,7 +199,10 @@
 
   <!-- 05. FUNCIONALIDADES -->
   <!-- TODO: nomes dos itens vêm do menu administrativo real; a divisão em 3 cards é só um agrupamento visual (sem rótulo), decisão própria — revisar com o time de produto -->
-  <section id="funcionalidades" class="section bg-tint-3">
+  <section id="funcionalidades" class="section">
+    <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
+    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
+    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
     <div class="container">
       <div class="funcionalidades-intro">
         <h2>Tudo que a plataforma faz, em um só lugar.</h2>
@@ -272,35 +210,47 @@
       </div>
 
       <div class="funcionalidades-grid">
-        <div class="card funcionalidades-group reveal-on-scroll">
+        <div class="funcionalidades-group reveal-on-scroll">
           <ul class="funcionalidades-list">
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg></span>Empregados</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5a1.5 1.5 0 0 1 1.5-1.5h4l1.7 2H19a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 20H4.5A1.5 1.5 0 0 1 3 18.5v-11z"/></svg></span>Documentos por Departamento/Localização</li>
+            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5a1.5 1.5 0 0 1 1.5-1.5h4l1.7 2H19a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 20H4.5A1.5 1.5 0 0 1 3 18.5v-11z"/></svg></span>Documentos por Depto.</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 4.5 1.8 5.5 1.8 5.5H4.2S6 13.5 6 9z"/><path d="M9.5 18.5a2.5 2.5 0 0 0 5 0"/></svg></span>Comunicados</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Banco de Horas</li>
+            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v3.5"/><path d="M16 3v3.5"/></svg></span>Feriados</li>
+            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.6 2.6 4.8-5.4"/></svg></span>Apuração de Batidas</li>
           </ul>
         </div>
 
-        <div class="card funcionalidades-group reveal-on-scroll">
+        <div class="funcionalidades-group reveal-on-scroll">
           <ul class="funcionalidades-list">
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v3.5"/><path d="M16 3v3.5"/></svg></span>Feriados</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.6 2.6 4.8-5.4"/></svg></span>Apuração de Batidas</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3.5 6v13.5L9 17l6 2.5 5.5-2V4L15 6l-6-2z"/><path d="M9 4v13"/><path d="M15 6v13.5"/></svg></span>Mapa de Batidas</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.2h6l4.5 4.5v12a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V4.5a1.3 1.3 0 0 1 1.3-1.3z"/><path d="M9 13h6"/><path d="M9 16.5h6"/></svg></span>Justificativas</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6.5h11"/><path d="M9 12h11"/><path d="M9 17.5h11"/><path d="M4 6.5h.01"/><path d="M4 12h.01"/><path d="M4 17.5h.01"/></svg></span>Horários</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.8"/><path d="M12 2.5v2.3M12 19.2v2.3M4.5 4.5l1.6 1.6M17.9 17.9l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.5 19.5l1.6-1.6M17.9 6.1l1.6-1.6"/></svg></span>Férias</li>
+            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8.5 7.5V5.8a1.8 1.8 0 0 1 1.8-1.8h3.4a1.8 1.8 0 0 1 1.8 1.8v1.7"/><path d="M3 12.5h18"/></svg></span>Adm. Empresa</li>
+            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.2h6l4.5 4.5v12a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V4.5a1.3 1.3 0 0 1 1.3-1.3z"/><path d="M9.3 13.5l2 2 3.4-4"/></svg></span>AFD</li>
           </ul>
         </div>
 
-        <div class="card funcionalidades-group reveal-on-scroll">
+        <div class="funcionalidades-group reveal-on-scroll">
           <ul class="funcionalidades-list">
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8.5 7.5V5.8a1.8 1.8 0 0 1 1.8-1.8h3.4a1.8 1.8 0 0 1 1.8 1.8v1.7"/><path d="M3 12.5h18"/></svg></span>Adm. Empresa</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.2h6l4.5 4.5v12a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V4.5a1.3 1.3 0 0 1 1.3-1.3z"/><path d="M9.3 13.5l2 2 3.4-4"/></svg></span>AFD (Arquivo Fonte de Dados)</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="1.8"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="1.8"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="1.8"/></svg></span>Grupo de Regras</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6 6.5-11a6.5 6.5 0 0 0-13 0c0 5 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>Localizações</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v3.5"/><path d="M6 17v-1a6 6 0 0 1 12 0v1"/></svg></span>Estrutura da empresa</li>
             <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="11" rx="1.5"/><path d="M12 14v4.5"/><path d="M9 18.5h6"/></svg></span>Totens</li>
           </ul>
+        </div>
+
+        <div class="funcionalidades-photo reveal-on-scroll">
+          <div class="funcionalidades-photo-frame">
+            <img src="assets/funcionalidades-team.png" alt="Equipe usando a plataforma Eng Ponto no escritório" class="funcionalidades-photo-img">
+          </div>
+          <div class="funcionalidades-photo-caption">
+            <span class="funcionalidades-caption-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </span>
+            <p>Cada colaborador registra o ponto pelo próprio celular, com verificação facial e localização. Ideal pra equipes externas e em campo.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -798,6 +748,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=12"></script>
 </body>
 </html>
