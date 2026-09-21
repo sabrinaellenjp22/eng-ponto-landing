@@ -119,6 +119,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  /* 03b. ABAS DE GRUPOS DE FUNCIONALIDADES (troca a foto + legenda ao lado) */
+  const funcGroupButtons = document.querySelectorAll('.func-group-btn');
+  const funcImg = document.querySelector('.funcionalidades-photo-img');
+  const funcCaption = document.querySelector('.funcionalidades-photo-caption p');
+
+  funcGroupButtons.forEach((btn, index) => {
+    btn.addEventListener('mouseenter', () => switchFuncGroup(index));
+    btn.addEventListener('focus', () => switchFuncGroup(index));
+    btn.addEventListener('click', () => switchFuncGroup(index));
+
+    btn.addEventListener('keydown', (e) => {
+      let targetIndex = null;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        targetIndex = (index + 1) % funcGroupButtons.length;
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        targetIndex = (index - 1 + funcGroupButtons.length) % funcGroupButtons.length;
+      }
+
+      if (targetIndex !== null) {
+        e.preventDefault();
+        funcGroupButtons[targetIndex].focus();
+      }
+    });
+  });
+
+  function switchFuncGroup(index) {
+    const active = funcGroupButtons[index];
+
+    funcGroupButtons.forEach((b, i) => {
+      b.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    });
+
+    if (funcImg) {
+      funcImg.src = active.dataset.img;
+      funcImg.alt = active.dataset.alt;
+    }
+    if (funcCaption) {
+      funcCaption.textContent = active.dataset.caption;
+    }
+  }
+
+
   /* 05. ACORDEÃO DAS FAQS */
   const faqItems = document.querySelectorAll('.faq-item');
 

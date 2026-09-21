@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controle de Ponto Eletrônico REP-P | Eng Ponto</title>
   <meta name="description" content="Ponto eletrônico conforme a Portaria 671, com AFD assinado em um clique, validação de local em camadas e importação do histórico do seu sistema atual.">
-  
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
   <!-- Fonte Google (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=46">
+  <link rel="stylesheet" href="styles.css?v=76">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -97,15 +100,12 @@
   <header id="nav">
     <div class="container nav-wrapper">
       <a href="#" class="brand-logo" aria-label="Eng Ponto Página Inicial">
-        <span class="logo-mark" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-        </span>
-        Eng Ponto
+        <img src="assets/logo-white.svg" alt="Eng Ponto" class="logo-full logo-full-light">
+        <img src="assets/logo.svg" alt="Eng Ponto" class="logo-full logo-full-dark">
       </a>
       <nav aria-label="Menu principal">
         <ul class="nav-links">
           <li><a href="#como" class="nav-link">Como funciona</a></li>
-          <li><a href="#conformidade" class="nav-link">Conformidade</a></li>
           <li><a href="#implantacao" class="nav-link">Implantação</a></li>
           <li><a href="#planos" class="nav-link">Planos</a></li>
           <li><a href="#faq" class="nav-link">Dúvidas</a></li>
@@ -140,7 +140,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>Registre seu ponto<br><span class="h1-underline"><span id="hero-rotating-word">de onde estiver.</span></span></h1>
-        <p class="lead">Pelo celular, pelo navegador ou no totem da empresa — sua equipe escolhe, e você não precisa comprar relógio nenhum. A apuração roda sozinha e fecha o mês em um clique.</p>
+        <p class="lead">Pelo celular, pelo navegador ou no totem da empresa: sua equipe escolhe, sem comprar relógio de ponto. A apuração fecha o mês sozinha.</p>
         <div class="hero-ctas">
           <a href="#modos" class="btn btn-primary">Ver como funciona <span class="arrow" aria-hidden="true">→</span></a>
           <!-- TODO: substituir pelo número real do WhatsApp -->
@@ -154,9 +154,9 @@
   <!-- 03. TRÊS FORMAS DE BATER O PONTO -->
   <section id="modos" class="section">
     <div class="container">
-      <div class="modos-intro">
-        <h2>Sua equipe bate o ponto onde for mais fácil.</h2>
-        <p class="lead">Combine os três formatos como quiser: celular pra quem trabalha externo, navegador pra quem está no escritório, totem pra quem prefere um ponto fixo. Tudo cai na mesma apuração.</p>
+      <div class="modos-intro reveal-on-scroll">
+        <h2>Sua equipe bate o ponto <span class="h1-underline">onde for mais fácil</span>.</h2>
+        <p class="lead">Celular pra quem trabalha externo, navegador pra quem está no escritório e totem pra ponto fixo: tudo cai na mesma apuração.</p>
       </div>
 
       <div class="modos-grid">
@@ -166,8 +166,7 @@
           </div>
           <div class="modos-card-body">
             <h3>App no celular</h3>
-            <span class="modos-card-tag">Reconhecimento facial + GPS</span>
-            <p class="modos-card-desc-text">Cada colaborador registra o ponto pelo próprio celular, com verificação facial e localização. Ideal pra equipes externas e em campo.</p>
+            <p class="modos-card-desc-text">Pra quem trabalha externo ou em campo, pelo próprio celular.</p>
           </div>
         </div>
 
@@ -177,19 +176,17 @@
           </div>
           <div class="modos-card-body">
             <h3>Totem físico</h3>
-            <span class="modos-card-tag">Um ponto fixo pra toda a equipe</span>
-            <p class="modos-card-desc-text">Pra quem prefere um ponto fixo na entrada: a plataforma também administra o totem, sem comprar relógio separado.</p>
+            <p class="modos-card-desc-text">Um ponto fixo na entrada, com seu tablet ou totem vinculado à plataforma.</p>
           </div>
         </div>
 
-        <div class="modos-card modos-card-stacked reveal-on-scroll">
+        <div class="modos-card reveal-on-scroll">
           <div class="modos-card-visual">
             <img src="assets/modos-icon-web.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
           <div class="modos-card-body">
             <h3>Navegador (Web)</h3>
-            <span class="modos-card-tag">Direto do computador</span>
-            <p class="modos-card-desc-text">Quem está no escritório registra pelo navegador, com a validação de rede ou de local que você configurar.</p>
+            <p class="modos-card-desc-text">Direto do computador, com validação pela rede ou localização configurada.</p>
           </div>
         </div>
       </div>
@@ -198,50 +195,55 @@
 
 
   <!-- 05. FUNCIONALIDADES -->
-  <!-- TODO: nomes dos itens vêm do menu administrativo real; a divisão em 3 cards é só um agrupamento visual (sem rótulo), decisão própria — revisar com o time de produto -->
+  <!-- Agrupamento em 4 categorias (definido com o usuário) substitui os 16 itens soltos sem título. -->
+  <!-- TODO: fotos reais por grupo ainda pendentes — todas as abas usam a mesma foto placeholder (assets/funcionalidades-team.png) via data-img; trocar quando o usuário enviar as imagens. -->
   <section id="funcionalidades" class="section">
-    <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
-    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
-    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
     <div class="container">
-      <div class="funcionalidades-intro">
-        <h2>Tudo que a plataforma faz, em um só lugar.</h2>
-        <p class="lead">Da marcação da batida ao fechamento do mês, cada etapa tem sua própria tela no painel administrativo.</p>
+      <div class="funcionalidades-panel">
+        <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
+        <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
+        <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
+      <div class="funcionalidades-intro reveal-on-scroll">
+        <h2>Todo o seu painel administrativo, <span class="h1-underline">em um só lugar</span>.</h2>
+        <p class="lead">Da marcação da batida ao fechamento do mês, cada etapa tem sua própria tela dedicada.</p>
       </div>
 
       <div class="funcionalidades-grid">
-        <div class="funcionalidades-group reveal-on-scroll">
-          <ul class="funcionalidades-list">
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg></span>Empregados</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5a1.5 1.5 0 0 1 1.5-1.5h4l1.7 2H19a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 20H4.5A1.5 1.5 0 0 1 3 18.5v-11z"/></svg></span>Documentos por Depto.</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 4.5 1.8 5.5 1.8 5.5H4.2S6 13.5 6 9z"/><path d="M9.5 18.5a2.5 2.5 0 0 0 5 0"/></svg></span>Comunicados</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Banco de Horas</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 3v3.5"/><path d="M16 3v3.5"/></svg></span>Feriados</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.6 2.6 4.8-5.4"/></svg></span>Apuração de Batidas</li>
-          </ul>
+        <div class="funcionalidades-groups reveal-on-scroll" role="tablist" aria-label="Categorias de funcionalidades">
+          <button type="button" class="func-group-btn" role="tab" id="func-tab-0" aria-selected="true" aria-controls="func-panel"
+            data-img="assets/funcionalidades-team.png"
+            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-caption="Cadastro de empregados, documentos por departamento, comunicados internos e controle de férias, tudo em um só lugar.">
+            <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg></span>
+            <span class="func-group-title">Gestão de Colaboradores</span>
+          </button>
+
+          <button type="button" class="func-group-btn" role="tab" id="func-tab-1" aria-selected="false" aria-controls="func-panel"
+            data-img="assets/funcionalidades-team.png"
+            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-caption="Horários, banco de horas, feriados e justificativas: a jornada configurada do jeito que sua empresa funciona.">
+            <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+            <span class="func-group-title">Jornada e Banco de Horas</span>
+          </button>
+
+          <button type="button" class="func-group-btn" role="tab" id="func-tab-2" aria-selected="false" aria-controls="func-panel"
+            data-img="assets/funcionalidades-team.png"
+            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-caption="Apuração de batidas, mapa de localização, geração do AFD e grupos de regras: a conformidade roda sozinha.">
+            <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.6 2.6 4.8-5.4"/></svg></span>
+            <span class="func-group-title">Apuração e Conformidade</span>
+          </button>
+
+          <button type="button" class="func-group-btn" role="tab" id="func-tab-3" aria-selected="false" aria-controls="func-panel"
+            data-img="assets/funcionalidades-team.png"
+            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-caption="Administração da empresa, estrutura organizacional, localizações autorizadas e totens, tudo configurável no painel.">
+            <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v3.5"/><path d="M6 17v-1a6 6 0 0 1 12 0v1"/></svg></span>
+            <span class="func-group-title">Estrutura e Configuração</span>
+          </button>
         </div>
 
-        <div class="funcionalidades-group reveal-on-scroll">
-          <ul class="funcionalidades-list">
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3.5 6v13.5L9 17l6 2.5 5.5-2V4L15 6l-6-2z"/><path d="M9 4v13"/><path d="M15 6v13.5"/></svg></span>Mapa de Batidas</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.2h6l4.5 4.5v12a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V4.5a1.3 1.3 0 0 1 1.3-1.3z"/><path d="M9 13h6"/><path d="M9 16.5h6"/></svg></span>Justificativas</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6.5h11"/><path d="M9 12h11"/><path d="M9 17.5h11"/><path d="M4 6.5h.01"/><path d="M4 12h.01"/><path d="M4 17.5h.01"/></svg></span>Horários</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.8"/><path d="M12 2.5v2.3M12 19.2v2.3M4.5 4.5l1.6 1.6M17.9 17.9l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.5 19.5l1.6-1.6M17.9 6.1l1.6-1.6"/></svg></span>Férias</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M8.5 7.5V5.8a1.8 1.8 0 0 1 1.8-1.8h3.4a1.8 1.8 0 0 1 1.8 1.8v1.7"/><path d="M3 12.5h18"/></svg></span>Adm. Empresa</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.2h6l4.5 4.5v12a1.3 1.3 0 0 1-1.3 1.3H7.5a1.3 1.3 0 0 1-1.3-1.3V4.5a1.3 1.3 0 0 1 1.3-1.3z"/><path d="M9.3 13.5l2 2 3.4-4"/></svg></span>AFD</li>
-          </ul>
-        </div>
-
-        <div class="funcionalidades-group reveal-on-scroll">
-          <ul class="funcionalidades-list">
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="1.8"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="1.8"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="1.8"/></svg></span>Grupo de Regras</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-6 6.5-11a6.5 6.5 0 0 0-13 0c0 5 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>Localizações</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v3.5"/><path d="M6 17v-1a6 6 0 0 1 12 0v1"/></svg></span>Estrutura da empresa</li>
-            <li><span class="func-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="11" rx="1.5"/><path d="M12 14v4.5"/><path d="M9 18.5h6"/></svg></span>Totens</li>
-          </ul>
-        </div>
-
-        <div class="funcionalidades-photo reveal-on-scroll">
+        <div class="funcionalidades-photo reveal-on-scroll" id="func-panel" role="tabpanel" aria-live="polite">
           <div class="funcionalidades-photo-frame">
             <img src="assets/funcionalidades-team.png" alt="Equipe usando a plataforma Eng Ponto no escritório" class="funcionalidades-photo-img">
           </div>
@@ -249,9 +251,10 @@
             <span class="funcionalidades-caption-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
             </span>
-            <p>Cada colaborador registra o ponto pelo próprio celular, com verificação facial e localização. Ideal pra equipes externas e em campo.</p>
+            <p>Cadastro de empregados, documentos por departamento, comunicados internos e controle de férias, tudo em um só lugar.</p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -260,7 +263,8 @@
   <!-- 06. COMO FUNCIONA (ABAS REAIS ACESSÍVEIS) -->
   <section id="como" class="section">
     <div class="container">
-      <h2>O mês inteiro, em três movimentos.</h2>
+      <h2 class="como-intro reveal-on-scroll">O mês inteiro <span class="h1-underline">em três movimentos</span>.</h2>
+      <p class="lead">Da marcação da batida ao fechamento do espelho, sem depender de planilha.</p>
 
       <div class="como-layout">
         <div class="tabs-list" role="tablist" aria-label="Passos de funcionamento">
@@ -300,29 +304,29 @@
 
           <!-- Painel 2: Tabela previsto x realizado -->
           <div class="tab-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-            <div class="card" style="padding: 24px;">
+            <div class="card mock-panel-card">
               <div class="mock-subhead">
                 <span>Apuração diária</span>
                 <span>Visão de Gestor</span>
               </div>
-              <div style="font-family: var(--font-mono); font-size: 13px; display: flex; flex-direction: column; gap: 12px;">
-                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 10px; color: var(--muted); font-weight: 600;">
-                  <span>COLABORADOR</span>
-                  <span>PREVISTO / REALIZADO</span>
-                  <span>SITUAÇÃO</span>
+              <div class="mock-table">
+                <div class="mock-table-head">
+                  <span>Colaborador</span>
+                  <span>Previsto / Realizado</span>
+                  <span>Situação</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-block: 4px;">
-                  <span style="font-weight: 600; color: var(--ink);">Carla Mendes</span>
+                <div class="mock-table-row">
+                  <span class="mock-table-name">Carla Mendes</span>
                   <span>08:00 / 08:02</span>
                   <span class="chip chip-ok">Normal</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-block: 4px;">
-                  <span style="font-weight: 600; color: var(--ink);">Roberto Lima</span>
+                <div class="mock-table-row">
+                  <span class="mock-table-name">Roberto Lima</span>
                   <span>08:00 / 09:15</span>
                   <span class="chip">Horas Extras</span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-block: 4px;">
-                  <span style="font-weight: 600; color: var(--ink);">Marcelo Bueno</span>
+                <div class="mock-table-row">
+                  <span class="mock-table-name">Marcelo Bueno</span>
                   <span>08:00 / Folga</span>
                   <span class="chip chip-ok">Justificado</span>
                 </div>
@@ -332,65 +336,31 @@
 
           <!-- Painel 3: Espelho com totais e assinatura -->
           <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2">
-            <div class="card" style="padding: 24px;">
+            <div class="card mock-panel-card">
               <div class="mock-subhead">
                 <span>Espelho de Ponto</span>
                 <span>Período Fechado</span>
               </div>
-              <div style="font-family: var(--font-mono); font-size: 13.5px; display: flex; flex-direction: column; gap: 14px;">
-                <div style="display: flex; justify-content: space-between;">
-                  <span style="color: var(--ink-2);">Total Horas Trabalhadas:</span>
-                  <strong style="color: var(--ink);">168h 30min</strong>
+              <div class="mock-summary">
+                <div class="mock-summary-row">
+                  <span class="label">Total Horas Trabalhadas:</span>
+                  <span class="value">168h 30min</span>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span style="color: var(--ink-2);">Saldo Banco de Horas:</span>
-                  <strong style="color: var(--ok);">+04h 15min</strong>
+                <div class="mock-summary-row">
+                  <span class="label">Saldo Banco de Horas:</span>
+                  <span class="value ok">+04h 15min</span>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span style="color: var(--ink-2);">Faltas / Atrasos:</span>
-                  <span style="color: var(--ink-2);">00h 00min</span>
+                <div class="mock-summary-row">
+                  <span class="label">Faltas / Atrasos:</span>
+                  <span class="label">00h 00min</span>
                 </div>
-                <div style="border-top: 1px dashed var(--line); padding-top: 14px; color: var(--brand); font-weight: 600; font-size: 12px; display: flex; align-items: center; gap: 6px;">
-                  <span style="color: var(--ok);">✓</span> Competência 08/2026 assinada · PKCS nº 7
+                <div class="mock-signed">
+                  <span class="check">✓</span> Competência 08/2026 assinada · PKCS nº 7
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 07. CONFORMIDADE E AUDITORIA (ÚNICO BLOCO ESCURO DO SITE) -->
-  <section id="conformidade" class="section">
-    <div class="conformidade-halo" aria-hidden="true"></div>
-    <div class="texture-rings" aria-hidden="true"></div>
-    <div class="container conformidade-grid">
-      <div>
-        <h2>Exporte seus registros.</h2>
-        <p class="lead">O AFD do período sai assinado digitalmente, pronto pra qualquer fiscalização.</p>
-
-        <div class="conformidade-list">
-          <div class="conformidade-item">
-            <div class="conformidade-num">1</div>
-            <div>
-              <p>Arquivo assinado, baixado no seu computador, em menos de um minuto.</p>
-            </div>
-          </div>
-
-          <div class="conformidade-item">
-            <div class="conformidade-num">2</div>
-            <div>
-              <p>O histórico não some, os registros anteriores ficam guardados.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TODO: substituir pela foto definitiva de exportação/conformidade -->
-      <div class="conformidade-photo photo-frame">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
       </div>
     </div>
   </section>
@@ -402,23 +372,32 @@
     <div class="container offline-grid">
       <div>
         <h2>Sem internet, o ponto não para.</h2>
-        <p class="lead">O colaborador bate o ponto pelo app mesmo sem conexão — o registro fica guardado no aparelho. Assim que o celular encontra rede (Wi-Fi ou dados), a sincronização com o sistema acontece sozinha, sem precisar reabrir nada.</p>
+        <p class="lead">O colaborador bate o ponto pelo app mesmo sem conexão: o registro fica guardado no aparelho. Assim que o celular encontra rede (Wi-Fi ou dados), a sincronização com o sistema acontece sozinha, sem precisar reabrir nada.</p>
       </div>
 
       <div class="offline-card reveal-on-scroll">
-        <div class="offline-card-title">SEM REDE → SINCRONIZADO</div>
-        <div class="offline-list">
-          <div class="offline-row">
-            <span class="offline-de">Bate o ponto sem sinal</span>
-            <span class="offline-para">→ Fica salvo no aparelho, com data e hora</span>
+        <div class="offline-card-title">Sem rede → Sincronizado</div>
+        <div class="offline-steps">
+          <div class="offline-step">
+            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
+            <div>
+              <p class="offline-step-title">Bate o ponto sem sinal</p>
+              <p class="offline-step-desc">Fica salvo no aparelho, com data e hora.</p>
+            </div>
           </div>
-          <div class="offline-row">
-            <span class="offline-de">Continua sem conexão</span>
-            <span class="offline-para">→ Cada nova batida entra na fila local</span>
+          <div class="offline-step">
+            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+            <div>
+              <p class="offline-step-title">Continua sem conexão</p>
+              <p class="offline-step-desc">Cada nova batida entra na fila local.</p>
+            </div>
           </div>
-          <div class="offline-row">
-            <span class="offline-de">Encontra rede outra vez</span>
-            <span class="offline-para">→ A fila sincroniza sozinha com o sistema</span>
+          <div class="offline-step">
+            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
+            <div>
+              <p class="offline-step-title">Encontra rede outra vez</p>
+              <p class="offline-step-desc">A fila sincroniza sozinha com o sistema.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -503,7 +482,22 @@
     <div class="container custo-grid">
       <div>
         <h2>O que você deixa de pagar também conta.</h2>
-        <p class="lead">Celular, navegador ou o totem que a plataforma também administra — sem comprar relógio de ponto separado.</p>
+        <p class="lead">Celular, navegador ou o totem que a plataforma também administra, sem comprar relógio de ponto separado.</p>
+
+        <div class="custo-list">
+          <div class="custo-item reveal-on-scroll">
+            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <p>Sem comprar relógio de ponto ou hardware dedicado.</p>
+          </div>
+          <div class="custo-item reveal-on-scroll">
+            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <p>Sem taxa de implantação nem consultoria externa.</p>
+          </div>
+          <div class="custo-item reveal-on-scroll">
+            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <p>Totem, app e verificação facial já inclusos, sem cobrança separada.</p>
+          </div>
+        </div>
       </div>
 
       <!-- TODO: substituir pela foto definitiva de economia/custo-benefício -->
@@ -519,7 +513,7 @@
     <div class="container">
       <div class="planos-header">
         <h2>Um plano só, sem surpresa no boleto.</h2>
-        <p class="lead">Totem, app e verificação facial já inclusos — sem taxa de implantação e sem cobrança separada.</p>
+        <p class="lead">Todos os recursos da plataforma no mesmo plano, sem versão limitada.</p>
       </div>
 
       <div class="planos-single-grid">
@@ -530,9 +524,9 @@
           </div>
           <div class="planos-card-body">
             <div class="planos-card-badge">PLANO ÚNICO</div>
-            <div class="plan-price-wrap">
-              <div class="plan-price">[R$ XX]</div>
-              <div class="plan-price-period">/mês · por colaborador</div>
+            <div class="plan-pricing-note">
+              <span class="plan-pricing-note-label">Como funciona a cobrança</span>
+              <p>Mensal, por colaborador ativo, sem taxa de implantação e sem cobrança separada por totem, app ou verificação facial.</p>
             </div>
             <ul class="plan-features">
               <li class="plan-feature-item"><span class="check">✓</span> Registro por app, web e totem</li>
@@ -545,8 +539,6 @@
           </div>
         </div>
       </div>
-
-      <!-- TODO: preço [R$ XX] é placeholder até a definição de pricing -->
     </div>
   </section>
 
@@ -687,10 +679,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#" class="brand-logo footer-logo" aria-label="Eng Ponto Página Inicial">
-          <span class="logo-mark" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-          </span>
-          Eng Ponto
+          <img src="assets/logo-white.svg" alt="Eng Ponto" class="logo-full">
         </a>
         <p class="footer-desc">Ponto eletrônico e gestão de jornada para empresas de qualquer porte.</p>
         <!-- TODO: substituir pelos links reais das redes sociais -->
@@ -707,7 +696,6 @@
       <div class="footer-col">
         <span class="footer-col-title">Navegação</span>
         <a href="#como" class="footer-link">Como funciona</a>
-        <a href="#conformidade" class="footer-link">Conformidade</a>
         <a href="#implantacao" class="footer-link">Implantação</a>
         <a href="#planos" class="footer-link">Planos</a>
         <a href="#faq" class="footer-link">Dúvidas</a>
@@ -748,6 +736,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=12"></script>
+  <script src="app.js?v=14"></script>
 </body>
 </html>
