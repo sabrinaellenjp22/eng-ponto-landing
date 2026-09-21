@@ -81,9 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 03. ABAS REAIS DE "COMO FUNCIONA" */
   const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
 
   tabButtons.forEach((btn, index) => {
+    btn.addEventListener('mouseenter', () => switchTab(index));
+    btn.addEventListener('focus', () => switchTab(index));
     btn.addEventListener('click', () => switchTab(index));
 
     // Suporte a Navegação por Teclado (Setas)
@@ -105,16 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function switchTab(index) {
     tabButtons.forEach((b, i) => {
-      const isSelected = i === index;
-      b.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-    });
-
-    tabPanels.forEach((p, i) => {
-      if (i === index) {
-        p.classList.add('active');
-      } else {
-        p.classList.remove('active');
-      }
+      b.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
   }
 

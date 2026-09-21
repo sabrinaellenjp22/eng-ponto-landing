@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=76">
+  <link rel="stylesheet" href="styles.css?v=94">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -106,7 +106,6 @@
       <nav aria-label="Menu principal">
         <ul class="nav-links">
           <li><a href="#como" class="nav-link">Como funciona</a></li>
-          <li><a href="#implantacao" class="nav-link">Implantação</a></li>
           <li><a href="#planos" class="nav-link">Planos</a></li>
           <li><a href="#faq" class="nav-link">Dúvidas</a></li>
         </ul>
@@ -268,98 +267,34 @@
 
       <div class="como-layout">
         <div class="tabs-list" role="tablist" aria-label="Passos de funcionamento">
-          <button class="tab-btn" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0">
+          <button class="tab-btn" role="tab" id="tab-0" aria-selected="true" aria-controls="como-video-panel">
             <span class="tab-num">01</span>
             <span class="tab-title">A equipe registra</span>
             <span class="tab-desc">No local autorizado, com a validação que você escolher pra cada unidade: cerco no mapa, GPS, verificação facial ou rede reconhecida.</span>
           </button>
 
-          <button class="tab-btn" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1">
+          <button class="tab-btn" role="tab" id="tab-1" aria-selected="false" aria-controls="como-video-panel">
             <span class="tab-num">02</span>
             <span class="tab-title">Você acompanha</span>
             <span class="tab-desc">Você acompanha a apuração das batidas contra a jornada prevista, vê onde cada marcação aconteceu no mapa e recebe as justificativas para analisar.</span>
           </button>
 
-          <button class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2">
+          <button class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="como-video-panel">
             <span class="tab-num">03</span>
             <span class="tab-title">O mês fecha</span>
             <span class="tab-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</span>
           </button>
         </div>
 
-        <div class="tab-panels-wrapper">
-          <!-- Painel 1: Mapa com cerco e pino pulsante -->
-          <div class="tab-panel active" id="panel-0" role="tabpanel" aria-labelledby="tab-0">
-            <div class="map-visual-box">
-              <div class="geofence-circle">
-                <div class="map-pin"></div>
-                <div class="map-pin-pulse"></div>
-              </div>
-              <div class="map-chips-container">
-                <div class="chip map-floating-chip">• Dentro do cerco · 40 m</div>
-                <div class="chip chip-ok map-floating-chip">• Facial confirmada</div>
-              </div>
-            </div>
+        <!-- TODO: vincular o vídeo de cada etapa (3 vídeos a caminho) -->
+        <div class="como-video-panel" id="como-video-panel" role="tabpanel">
+          <div class="como-video-frame">
+            <div class="como-video-overlay"></div>
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="como-video-cta">Falar com o time</a>
           </div>
-
-          <!-- Painel 2: Tabela previsto x realizado -->
-          <div class="tab-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-            <div class="card mock-panel-card">
-              <div class="mock-subhead">
-                <span>Apuração diária</span>
-                <span>Visão de Gestor</span>
-              </div>
-              <div class="mock-table">
-                <div class="mock-table-head">
-                  <span>Colaborador</span>
-                  <span>Previsto / Realizado</span>
-                  <span>Situação</span>
-                </div>
-                <div class="mock-table-row">
-                  <span class="mock-table-name">Carla Mendes</span>
-                  <span>08:00 / 08:02</span>
-                  <span class="chip chip-ok">Normal</span>
-                </div>
-                <div class="mock-table-row">
-                  <span class="mock-table-name">Roberto Lima</span>
-                  <span>08:00 / 09:15</span>
-                  <span class="chip">Horas Extras</span>
-                </div>
-                <div class="mock-table-row">
-                  <span class="mock-table-name">Marcelo Bueno</span>
-                  <span>08:00 / Folga</span>
-                  <span class="chip chip-ok">Justificado</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Painel 3: Espelho com totais e assinatura -->
-          <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2">
-            <div class="card mock-panel-card">
-              <div class="mock-subhead">
-                <span>Espelho de Ponto</span>
-                <span>Período Fechado</span>
-              </div>
-              <div class="mock-summary">
-                <div class="mock-summary-row">
-                  <span class="label">Total Horas Trabalhadas:</span>
-                  <span class="value">168h 30min</span>
-                </div>
-                <div class="mock-summary-row">
-                  <span class="label">Saldo Banco de Horas:</span>
-                  <span class="value ok">+04h 15min</span>
-                </div>
-                <div class="mock-summary-row">
-                  <span class="label">Faltas / Atrasos:</span>
-                  <span class="label">00h 00min</span>
-                </div>
-                <div class="mock-signed">
-                  <span class="check">✓</span> Competência 08/2026 assinada · PKCS nº 7
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class="como-video-expand" type="button" aria-label="Ver em tela cheia">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -368,38 +303,28 @@
 
   <!-- 08. REGISTRO OFFLINE -->
   <!-- TODO: confirmar com o time de produto os textos exatos de sincronização (ex.: tempo de retenção offline, o que acontece em caso de conflito de horário) -->
-  <section id="offline" class="section bg-tint-2">
-    <div class="container offline-grid">
-      <div>
-        <h2>Sem internet, o ponto não para.</h2>
-        <p class="lead">O colaborador bate o ponto pelo app mesmo sem conexão: o registro fica guardado no aparelho. Assim que o celular encontra rede (Wi-Fi ou dados), a sincronização com o sistema acontece sozinha, sem precisar reabrir nada.</p>
-      </div>
-
-      <div class="offline-card reveal-on-scroll">
-        <div class="offline-card-title">Sem rede → Sincronizado</div>
-        <div class="offline-steps">
-          <div class="offline-step">
-            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
-            <div>
-              <p class="offline-step-title">Bate o ponto sem sinal</p>
-              <p class="offline-step-desc">Fica salvo no aparelho, com data e hora.</p>
-            </div>
-          </div>
-          <div class="offline-step">
-            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
-            <div>
-              <p class="offline-step-title">Continua sem conexão</p>
-              <p class="offline-step-desc">Cada nova batida entra na fila local.</p>
-            </div>
-          </div>
-          <div class="offline-step">
-            <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></span>
-            <div>
-              <p class="offline-step-title">Encontra rede outra vez</p>
-              <p class="offline-step-desc">A fila sincroniza sozinha com o sistema.</p>
-            </div>
+  <!-- TODO: substituir pela foto definitiva da equipe usando o app -->
+  <section id="offline" class="section">
+    <div class="offline-banner reveal-on-scroll">
+      <div class="container offline-banner-grid">
+        <div class="offline-photo">
+          <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+          <div class="offline-photo-chip">
+            <span class="offline-photo-chip-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+            <span>Os registros ficam salvos e sincronizam quando a conexão voltar.</span>
           </div>
         </div>
+
+        <div class="offline-text-stack">
+          <div class="offline-title-card">
+            <h2><span class="offline-title-line">Sem internet?</span><br><span class="offline-title-line offline-title-underline">O ponto não para.</span></h2>
+          </div>
+          <div class="offline-body-card">
+            <p>O colaborador bate o ponto pelo app mesmo sem conexão: o registro fica guardado no aparelho. Assim que o celular encontra rede (Wi-Fi ou dados), a sincronização com o sistema acontece sozinha, sem precisar reabrir nada.</p>
+          </div>
+        </div>
+
+        <img class="offline-wifi-decor" src="assets/offline-wifi-3d.png" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -408,7 +333,7 @@
   <!-- 09. VALIDAÇÃO DA BATIDA -->
   <section id="validacao" class="section">
     <div class="container">
-      <h2>Quatro maneiras de saber que a batida é real.</h2>
+      <h2 class="validacao-intro reveal-on-scroll">Quatro maneiras de <span class="h1-underline">saber que a batida é real</span>.</h2>
       <p class="lead">Cada localização tem sua própria combinação de regras.</p>
 
       <div class="validacao-cards-grid">
@@ -448,61 +373,51 @@
   </section>
 
 
-  <!-- 10. IMPLANTAÇÃO (RESUMO EM 3 DESTAQUES) -->
-  <section id="implantacao" class="section bg-softer">
-    <div class="container">
-      <h2>Sem consultoria. Cada etapa aproveita a anterior.</h2>
-      <p class="lead">Sete etapas nessa ordem, agrupadas em três frentes.</p>
-
-      <div class="implantacao-grid">
-        <div class="card implantacao-card reveal-on-scroll">
-          <span class="eyebrow">01–03 · ESTRUTURA</span>
-          <h3>Empresa, filiais e localizações</h3>
-          <p>Dados cadastrais, habilitação do REP-P, estrutura de filiais e cargos, e o endereço/cerco de cada localização.</p>
-        </div>
-
-        <div class="card implantacao-card reveal-on-scroll">
-          <span class="eyebrow">04–06 · EQUIPE E REGRAS</span>
-          <h3>Funcionários, horários e banco de horas</h3>
-          <p>Importação em lote por planilha, modelo de jornada de cada colaborador e os grupos de regras que vinculam tudo.</p>
-        </div>
-
-        <div class="card implantacao-card reveal-on-scroll">
-          <span class="eyebrow">07 · MIGRAÇÃO (OPCIONAL)</span>
-          <h3>Importar AFD do sistema anterior</h3>
-          <p>Pra quem está trocando de fornecedor: traz o histórico de batidas do registrador anterior.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- 11. CUSTO-BENEFÍCIO -->
   <section id="custo" class="section">
-    <div class="container custo-grid">
-      <div>
-        <h2>O que você deixa de pagar também conta.</h2>
-        <p class="lead">Celular, navegador ou o totem que a plataforma também administra, sem comprar relógio de ponto separado.</p>
+    <div class="container">
+      <div class="custo-panel">
+        <div class="custo-grid">
+          <div>
+            <h2>O que você deixa de pagar também conta.</h2>
 
-        <div class="custo-list">
-          <div class="custo-item reveal-on-scroll">
-            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>Sem comprar relógio de ponto ou hardware dedicado.</p>
+            <div class="custo-list">
+              <div class="custo-item reveal-on-scroll">
+                <div class="custo-item-header">
+                  <h3>Ganhe tempo</h3>
+                  <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg></span>
+                </div>
+                <p>Reduza em até 60% do tempo gasto com tratamento do ponto e gestão de jornada. Libere sua equipe para ser mais estratégica.</p>
+              </div>
+              <div class="custo-item reveal-on-scroll">
+                <div class="custo-item-header">
+                  <h3>Economize dinheiro</h3>
+                  <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg></span>
+                </div>
+                <p>Acompanhe a quantidade de horas extras e seus valores em reais de forma automatizada.</p>
+              </div>
+              <div class="custo-item reveal-on-scroll">
+                <div class="custo-item-header">
+                  <h3>Evite dores de cabeça</h3>
+                  <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg></span>
+                </div>
+                <p>Um controle de jornada eficiente que ajuda você a evitar problemas trabalhistas, com dados confiáveis.</p>
+              </div>
+            </div>
           </div>
-          <div class="custo-item reveal-on-scroll">
-            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>Sem taxa de implantação nem consultoria externa.</p>
-          </div>
-          <div class="custo-item reveal-on-scroll">
-            <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <p>Totem, app e verificação facial já inclusos, sem cobrança separada.</p>
+
+          <!-- TODO: substituir pela foto definitiva de economia/custo-benefício -->
+          <!-- TODO: confirmar copy e link de destino do CTA flutuante -->
+          <div class="custo-photo-frame">
+            <div class="custo-photo photo-img">
+              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+            </div>
+            <button class="custo-photo-expand" type="button" aria-label="Ver em tela cheia">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="17 17 7 17 7 7"/></svg>
+            </button>
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="custo-photo-cta">Falar com o time</a>
           </div>
         </div>
-      </div>
-
-      <!-- TODO: substituir pela foto definitiva de economia/custo-benefício -->
-      <div class="custo-photo photo-img">
-        <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
       </div>
     </div>
   </section>
@@ -521,18 +436,27 @@
           <!-- TODO: substituir pela foto definitiva da seção de planos -->
           <div class="planos-photo">
             <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+            <img src="assets/logo.svg" alt="Eng Ponto" class="planos-photo-logo">
+            <div class="planos-photo-chip">
+              <div class="planos-photo-chip-header">
+                <span>Plano personalizado para seu time</span>
+                <span class="planos-photo-chip-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+                </span>
+              </div>
+              <p>Um controle de jornada eficiente que ajuda você a evitar problemas trabalhistas, com dados confiáveis.</p>
+            </div>
           </div>
           <div class="planos-card-body">
             <div class="planos-card-badge">PLANO ÚNICO</div>
-            <div class="plan-pricing-note">
-              <span class="plan-pricing-note-label">Como funciona a cobrança</span>
-              <p>Mensal, por colaborador ativo, sem taxa de implantação e sem cobrança separada por totem, app ou verificação facial.</p>
-            </div>
             <ul class="plan-features">
               <li class="plan-feature-item"><span class="check">✓</span> Registro por app, web e totem</li>
+              <li class="plan-feature-item"><span class="check">✓</span> Painel do gestor</li>
+              <li class="plan-feature-item"><span class="check">✓</span> Registro de ponto offline pelo app</li>
               <li class="plan-feature-item"><span class="check">✓</span> Verificação facial e validação por GPS ou rede</li>
               <li class="plan-feature-item"><span class="check">✓</span> Apuração, espelho e banco de horas</li>
               <li class="plan-feature-item"><span class="check">✓</span> Múltiplas localizações com fuso próprio</li>
+              <li class="plan-feature-item"><span class="check">✓</span> Atribuição de Jornadas e Férias</li>
               <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado</li>
             </ul>
             <a href="#" class="btn btn-primary plan-cta-btn">Falar com um especialista <span class="arrow" aria-hidden="true">→</span></a>
@@ -548,12 +472,21 @@
     <div class="container">
       <div class="faq-layout">
         <div class="faq-intro">
-          <h2>Antes de trocar de sistema.</h2>
+          <h2>Restou alguma dúvida?</h2>
           <p class="lead">As perguntas que mais aparecem nessa conversa.</p>
-          <!-- TODO: substituir pela foto definitiva de um gestor de RH ou responsável pela implantação -->
-          <div class="faq-photo photo-img">
-            <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+          <!-- TODO: substituir pelas fotos definitivas (equipe + colaboradora) -->
+          <div class="faq-photo-collage">
+            <div class="faq-photo-main photo-img">
+              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+            </div>
+            <div class="faq-photo-small photo-img">
+              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+            </div>
+            <div class="faq-logo-badge">
+              <img src="assets/logo-white.svg" alt="Eng Ponto">
+            </div>
           </div>
+          <a href="#" class="btn faq-cta-btn">Falar com um especialista <span class="arrow" aria-hidden="true">→</span></a>
         </div>
 
       <div class="faq-list">
@@ -696,7 +629,6 @@
       <div class="footer-col">
         <span class="footer-col-title">Navegação</span>
         <a href="#como" class="footer-link">Como funciona</a>
-        <a href="#implantacao" class="footer-link">Implantação</a>
         <a href="#planos" class="footer-link">Planos</a>
         <a href="#faq" class="footer-link">Dúvidas</a>
       </div>
@@ -736,6 +668,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=14"></script>
+  <script src="app.js?v=16"></script>
 </body>
 </html>
