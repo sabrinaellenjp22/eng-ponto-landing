@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=101">
+  <link rel="stylesheet" href="styles.css?v=110">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -196,13 +196,11 @@
 
   <!-- 05. FUNCIONALIDADES -->
   <!-- Agrupamento em 4 categorias (definido com o usuário) substitui os 16 itens soltos sem título. -->
-  <!-- TODO: fotos reais por grupo ainda pendentes — todas as abas usam a mesma foto placeholder (assets/funcionalidades-team.png) via data-img; trocar quando o usuário enviar as imagens. -->
-  <section id="funcionalidades" class="section">
+  <section id="funcionalidades" class="section funcionalidades-panel">
+    <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
+    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
+    <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
     <div class="container">
-      <div class="funcionalidades-panel">
-        <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
-        <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
-        <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
       <div class="funcionalidades-intro reveal-on-scroll">
         <h2>Todo o seu painel administrativo, <span class="h1-underline">em um só lugar</span>.</h2>
         <p class="lead">Da marcação da batida ao fechamento do mês, cada etapa tem sua própria tela dedicada.</p>
@@ -211,32 +209,32 @@
       <div class="funcionalidades-grid">
         <div class="funcionalidades-groups reveal-on-scroll" role="tablist" aria-label="Categorias de funcionalidades">
           <button type="button" class="func-group-btn" role="tab" id="func-tab-0" aria-selected="true" aria-controls="func-panel"
-            data-img="assets/funcionalidades-team.png"
-            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-img="assets/funcionalidades-colaboradores.jpg"
+            data-alt="Duas colaboradoras trocando documentos em uma mesa de escritório"
             data-caption="Cadastro de empregados, documentos por departamento, comunicados internos e controle de férias, tudo em um só lugar.">
             <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.5-5.5 7-5.5s7 2 7 5.5"/></svg></span>
             <span class="func-group-title">Gestão de Colaboradores</span>
           </button>
 
           <button type="button" class="func-group-btn" role="tab" id="func-tab-1" aria-selected="false" aria-controls="func-panel"
-            data-img="assets/funcionalidades-team.png"
-            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-img="assets/funcionalidades-jornada.jpg"
+            data-alt="Colaboradora trabalhando à noite em frente ao computador"
             data-caption="Horários, banco de horas, feriados e justificativas: a jornada configurada do jeito que sua empresa funciona.">
             <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
             <span class="func-group-title">Jornada e Banco de Horas</span>
           </button>
 
           <button type="button" class="func-group-btn" role="tab" id="func-tab-2" aria-selected="false" aria-controls="func-panel"
-            data-img="assets/funcionalidades-team.png"
-            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-img="assets/funcionalidades-apuracao.jpg"
+            data-alt="Gestora revisando documentos junto com uma colaboradora"
             data-caption="Apuração de batidas, mapa de localização, geração do AFD e grupos de regras: a conformidade roda sozinha.">
             <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.6 2.6 4.8-5.4"/></svg></span>
             <span class="func-group-title">Apuração e Conformidade</span>
           </button>
 
           <button type="button" class="func-group-btn" role="tab" id="func-tab-3" aria-selected="false" aria-controls="func-panel"
-            data-img="assets/funcionalidades-team.png"
-            data-alt="Equipe usando a plataforma Eng Ponto no escritório"
+            data-img="assets/funcionalidades-estrutura.jpg"
+            data-alt="Ilustração digital de arquivos e configuração de sistema"
             data-caption="Administração da empresa, estrutura organizacional, localizações autorizadas e totens, tudo configurável no painel.">
             <span class="func-group-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M12 7v3.5"/><path d="M6 17v-1a6 6 0 0 1 12 0v1"/></svg></span>
             <span class="func-group-title">Estrutura e Configuração</span>
@@ -245,7 +243,7 @@
 
         <div class="funcionalidades-photo reveal-on-scroll" id="func-panel" role="tabpanel" aria-live="polite">
           <div class="funcionalidades-photo-frame">
-            <img src="assets/funcionalidades-team.png" alt="Equipe usando a plataforma Eng Ponto no escritório" class="funcionalidades-photo-img">
+            <img src="assets/funcionalidades-colaboradores.jpg" alt="Duas colaboradoras trocando documentos em uma mesa de escritório" class="funcionalidades-photo-img">
           </div>
           <div class="funcionalidades-photo-caption">
             <span class="funcionalidades-caption-icon" aria-hidden="true">
@@ -254,7 +252,6 @@
             <p>Cadastro de empregados, documentos por departamento, comunicados internos e controle de férias, tudo em um só lugar.</p>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </section>
@@ -280,14 +277,13 @@
             <span class="tab-desc">Você acompanha a apuração das batidas contra a jornada prevista, vê onde cada marcação aconteceu no mapa e recebe as justificativas para analisar.</span>
           </button>
 
-          <button class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="como-video-panel">
+          <button class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-03-fechamento.mp4">
             <span class="tab-num">03</span>
             <span class="tab-title">O mês fecha</span>
             <span class="tab-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</span>
           </button>
         </div>
 
-        <!-- TODO: vincular o vídeo da etapa 03 (a caminho) -->
         <div class="como-video-panel" id="como-video-panel" role="tabpanel">
           <div class="como-video-frame">
             <video class="como-video is-visible" muted loop playsinline autoplay preload="metadata">
@@ -307,13 +303,20 @@
 
   <!-- 08. REGISTRO OFFLINE -->
   <!-- TODO: confirmar com o time de produto os textos exatos de sincronização (ex.: tempo de retenção offline, o que acontece em caso de conflito de horário) -->
-  <!-- TODO: substituir pela foto definitiva da equipe usando o app -->
-  <section id="offline" class="section">
+  <section id="offline" class="section offline-panel">
     <div class="container">
-      <div class="offline-panel">
-        <div class="offline-grid">
+      <div class="offline-grid">
+          <div class="offline-photo-frame reveal-on-scroll">
+            <div class="offline-photo photo-img">
+              <img src="assets/offline-registro.jpg" alt="Homem usando o celular na rua com reconhecimento facial em destaque" loading="lazy">
+            </div>
+            <div class="offline-photo-chip">
+              <span class="offline-photo-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 0 1-1-7.87A5.5 5.5 0 0 1 16.5 8h.5a4 4 0 0 1 1 7.9"/><path d="m9 15 2 2 4-4.5"/></svg></span>
+              <span>Registros salvos e sincronizados automaticamente</span>
+            </div>
+          </div>
+
           <div>
-            <span class="eyebrow offline-eyebrow">Modo offline</span>
             <h2>Sem internet?<br><span class="h1-underline">O ponto não para.</span></h2>
             <p class="lead offline-lead">O colaborador bate o ponto pelo app mesmo sem sinal. Assim que o celular encontra rede, o registro sincroniza sozinho — sem precisar reabrir nada.</p>
 
@@ -341,19 +344,8 @@
               </div>
             </div>
           </div>
-
-          <div class="offline-photo-frame reveal-on-scroll">
-            <div class="offline-photo photo-img">
-              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
-            </div>
-            <div class="offline-photo-chip">
-              <span class="offline-photo-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 0 1-1-7.87A5.5 5.5 0 0 1 16.5 8h.5a4 4 0 0 1 1 7.9"/><path d="m9 15 2 2 4-4.5"/></svg></span>
-              <span>Registros salvos e sincronizados automaticamente</span>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
   </section>
 
 
@@ -401,10 +393,9 @@
 
 
   <!-- 11. CUSTO-BENEFÍCIO -->
-  <section id="custo" class="section">
+  <section id="custo" class="section custo-panel">
     <div class="container">
-      <div class="custo-panel">
-        <div class="custo-grid">
+      <div class="custo-grid">
           <div>
             <h2>O que você deixa de pagar também conta.</h2>
 
@@ -433,11 +424,10 @@
             </div>
           </div>
 
-          <!-- TODO: substituir pela foto definitiva de economia/custo-benefício -->
           <!-- TODO: confirmar copy e link de destino do CTA flutuante -->
           <div class="custo-photo-frame">
             <div class="custo-photo photo-img">
-              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
+              <img src="assets/custo-economia.jpg" alt="Grupo de amigos sorrindo e tirando uma selfie" loading="lazy">
             </div>
             <button class="custo-photo-expand" type="button" aria-label="Ver em tela cheia">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="17 17 7 17 7 7"/></svg>
@@ -445,7 +435,6 @@
             <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="custo-photo-cta">Falar com o time</a>
           </div>
         </div>
-      </div>
     </div>
   </section>
 
