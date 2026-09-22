@@ -104,10 +104,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const comoVideo = document.querySelector('.como-video');
+  const comoVideoSource = comoVideo ? comoVideo.querySelector('source') : null;
+
   function switchTab(index) {
+    const active = tabButtons[index];
+
     tabButtons.forEach((b, i) => {
       b.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
+
+    if (!comoVideo) return;
+    const videoSrc = active.dataset.video;
+    if (videoSrc) {
+      comoVideo.classList.add('is-visible');
+      if (comoVideoSource.getAttribute('src') !== videoSrc) {
+        comoVideoSource.setAttribute('src', videoSrc);
+        comoVideo.load();
+        comoVideo.addEventListener('loadeddata', () => comoVideo.play().catch(() => {}), { once: true });
+      } else {
+        comoVideo.play().catch(() => {});
+      }
+    } else {
+      comoVideo.pause();
+      comoVideo.classList.remove('is-visible');
+    }
   }
 
 
