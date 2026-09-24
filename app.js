@@ -79,55 +79,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* 03. ABAS REAIS DE "COMO FUNCIONA" */
-  const tabButtons = document.querySelectorAll('.tab-btn');
+  /* 03. CARDS INTERATIVOS DE "COMO FUNCIONA" (troca o vídeo ao passar o mouse) */
+  const comoSteps = document.querySelectorAll('.como-step');
+  const comoVideo = document.querySelector('.como-video');
+  const comoVideoSource = comoVideo ? comoVideo.querySelector('source') : null;
 
-  tabButtons.forEach((btn, index) => {
-    btn.addEventListener('mouseenter', () => switchTab(index));
-    btn.addEventListener('focus', () => switchTab(index));
-    btn.addEventListener('click', () => switchTab(index));
+  comoSteps.forEach((btn, index) => {
+    btn.addEventListener('mouseenter', () => switchComoStep(index));
+    btn.addEventListener('focus', () => switchComoStep(index));
+    btn.addEventListener('click', () => switchComoStep(index));
 
-    // Suporte a Navegação por Teclado (Setas)
     btn.addEventListener('keydown', (e) => {
       let targetIndex = null;
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-        targetIndex = (index + 1) % tabButtons.length;
+        targetIndex = (index + 1) % comoSteps.length;
       } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        targetIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+        targetIndex = (index - 1 + comoSteps.length) % comoSteps.length;
       }
 
       if (targetIndex !== null) {
         e.preventDefault();
-        tabButtons[targetIndex].focus();
-        switchTab(targetIndex);
+        comoSteps[targetIndex].focus();
       }
     });
   });
 
-  const comoVideo = document.querySelector('.como-video');
-  const comoVideoSource = comoVideo ? comoVideo.querySelector('source') : null;
+  function switchComoStep(index) {
+    const active = comoSteps[index];
 
-  function switchTab(index) {
-    const active = tabButtons[index];
-
-    tabButtons.forEach((b, i) => {
-      b.setAttribute('aria-selected', i === index ? 'true' : 'false');
+    comoSteps.forEach((b, i) => {
+      const isActive = i === index;
+      b.classList.toggle('como-step--solid', isActive);
+      b.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
 
-    if (!comoVideo) return;
+    if (!comoVideo || !comoVideoSource) return;
     const videoSrc = active.dataset.video;
-    if (videoSrc) {
-      comoVideo.classList.add('is-visible');
-      if (comoVideoSource.getAttribute('src') !== videoSrc) {
-        comoVideoSource.setAttribute('src', videoSrc);
-        comoVideo.load();
-        comoVideo.addEventListener('loadeddata', () => comoVideo.play().catch(() => {}), { once: true });
-      } else {
-        comoVideo.play().catch(() => {});
-      }
+    if (comoVideoSource.getAttribute('src') !== videoSrc) {
+      comoVideoSource.setAttribute('src', videoSrc);
+      comoVideo.load();
+      comoVideo.addEventListener('loadeddata', () => comoVideo.play().catch(() => {}), { once: true });
     } else {
-      comoVideo.pause();
-      comoVideo.classList.remove('is-visible');
+      comoVideo.play().catch(() => {});
     }
   }
 

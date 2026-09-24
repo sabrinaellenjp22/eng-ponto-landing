@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=110">
+  <link rel="stylesheet" href="styles.css?v=139">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -121,26 +121,55 @@
   <!-- 01. HERO -->
   <section id="hero" class="section">
     <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-hero" aria-hidden="true">
-    <div class="hero-visual">
-      <div class="hero-photo-frame">
-        <img src="assets/hero-photo.png" alt="Colaborador batendo o ponto pelo celular em um ambiente de escritório" class="hero-photo">
-      </div>
+    <img src="assets/hero-form-vector.svg" alt="" class="hero-bg-vector" aria-hidden="true">
 
-      <div class="hero-badge hero-badge-totem" aria-hidden="true" title="Totem físico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="13" rx="2"/><circle cx="12" cy="9.5" r="2.2"/><line x1="12" y1="16" x2="12" y2="19"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+    <div class="hero-photo-wrap">
+      <img src="assets/hero-form-woman.webp" alt="Colaboradora batendo o ponto pelo celular" class="hero-photo">
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-badge hero-badge-laptop" aria-hidden="true" title="Navegador (Web)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
       </div>
       <div class="hero-badge hero-badge-phone" aria-hidden="true" title="App no celular">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
       </div>
-      <div class="hero-badge hero-badge-laptop" aria-hidden="true" title="Navegador (Web)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+      <div class="hero-badge hero-badge-totem" aria-hidden="true" title="Totem físico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="13" rx="2"/><circle cx="12" cy="9.5" r="2.2"/><line x1="12" y1="16" x2="12" y2="19"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+      </div>
+
+      <!-- TODO: os 6 campos abaixo e o texto de consentimento são um preenchimento provisório -
+           confirmar com o time quais dados reais devem ser coletados e para onde o formulário deve enviar os dados (não há backend configurado ainda) -->
+      <div class="hero-form-card">
+        <p class="hero-form-intro"><strong>Preencha seus dados</strong> e um especialista do Eng Ponto entrará em contato em breve.</p>
+        <form class="hero-form">
+          <input type="text" name="nome" placeholder="Nome completo*" autocomplete="name" required>
+          <input type="email" name="email" placeholder="E-mail corporativo*" autocomplete="email" required>
+          <input type="tel" name="whatsapp" placeholder="WhatsApp*" autocomplete="tel" required>
+          <input type="text" name="empresa" placeholder="Empresa*" required>
+          <input type="text" name="cargo" placeholder="Cargo*" required>
+          <input type="text" name="colaboradores" placeholder="Nº de colaboradores*" required>
+          <label class="hero-form-consent">
+            <input type="checkbox" required>
+            <span>Aceito receber comunicações do Eng Ponto por e-mail e WhatsApp. Ao informar meus dados, concordo com a política de privacidade.</span>
+          </label>
+          <button type="submit" class="btn hero-form-submit">Falar com um especialista</button>
+        </form>
       </div>
     </div>
 
     <div class="container hero-grid">
       <div class="hero-content">
-        <h1>Registre seu ponto<br><span class="h1-underline"><span id="hero-rotating-word">de onde estiver.</span></span></h1>
-        <p class="lead">Chega de planilha e atraso na folha. A apuração fecha o mês sozinha.</p>
+        <h1>De onde sua equipe estiver, o ponto já nasce em <span class="hl-yellow">conformidade.</span></h1>
+        <p class="lead">Celular, computador ou totem: não importa onde a equipe bate o ponto, o registro sai pronto pra fiscalização.</p>
+
+        <ul class="plan-features hero-checklist">
+          <li class="plan-feature-item"><span class="check">✓</span> App, navegador ou totem. Cada um bate o ponto onde for mais fácil.</li>
+          <li class="plan-feature-item"><span class="check">✓</span> Validado por GPS, rede ou reconhecimento facial, mesmo sem internet.</li>
+          <li class="plan-feature-item"><span class="check">✓</span> RH gasta até 60% menos tempo tratando ponto e jornada.</li>
+          <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado, pronta pra fiscalização.</li>
+        </ul>
+
         <div class="hero-ctas">
           <!-- TODO: substituir pelo número real do WhatsApp -->
           <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-primary">Falar com um especialista</a>
@@ -155,12 +184,13 @@
   <section id="modos" class="section">
     <div class="container">
       <div class="modos-intro reveal-on-scroll">
-        <h2>Sua equipe bate o ponto <span class="h1-underline">onde for mais fácil</span>.</h2>
+        <h2>Sua equipe bate o ponto <span class="text-gradient">onde for mais fácil</span></h2>
         <p class="lead">Celular pra quem trabalha externo, navegador pra quem está no escritório e totem pra ponto fixo: tudo cai na mesma apuração.</p>
       </div>
 
       <div class="modos-grid">
         <div class="modos-card reveal-on-scroll">
+          <span class="modos-card-number">1</span>
           <div class="modos-card-visual">
             <img src="assets/modos-icon-app.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
@@ -171,6 +201,7 @@
         </div>
 
         <div class="modos-card reveal-on-scroll">
+          <span class="modos-card-number">2</span>
           <div class="modos-card-visual">
             <img src="assets/modos-icon-totem.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
@@ -181,6 +212,7 @@
         </div>
 
         <div class="modos-card reveal-on-scroll">
+          <span class="modos-card-number">3</span>
           <div class="modos-card-visual">
             <img src="assets/modos-icon-web.png" alt="" class="modos-card-img" aria-hidden="true">
           </div>
@@ -194,9 +226,48 @@
   </section>
 
 
-  <!-- 05. FUNCIONALIDADES -->
+  <!-- 04. EMPRESAS QUE CONFIAM -->
+  <!-- TODO: logos reais dos clientes ainda pendentes (o usuário vai enviar) - usando placeholders genéricos por enquanto.
+       O mockup enviado tinha "NO EVAGAS" (nome de outro projeto usado como referência/template); ajustado pra "Eng Ponto" aqui. -->
+  <section id="clientes" class="section clientes-panel">
+    <div class="container clientes-row">
+      <p class="clientes-eyebrow">Empresas que já confiam<br>no Eng Ponto</p>
+      <div class="clientes-logos">
+        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 05. RECONHECIMENTO FACIAL OFFLINE -->
+  <!-- TODO: mockup original dizia "Engeponto" (provável resquício de template); ajustado pra "Eng Ponto" aqui, igual à correção feita na section de clientes.
+       TODO: confirmar com o time de produto os textos exatos de sincronização (ex.: tempo de retenção offline, o que acontece em caso de conflito de horário) -->
+  <section id="offline" class="section">
+    <div class="container">
+      <div class="offline-panel">
+        <img class="offline-panel-bg" src="assets/section-offline-bg.svg" alt="" aria-hidden="true" loading="lazy">
+        <div class="offline-content">
+          <h2>Reconhecimento facial offline no <span class="hl-yellow">Eng Ponto</span></h2>
+          <p class="lead offline-lead"><strong>Os colaboradores registram o ponto por reconhecimento facial mesmo sem internet.</strong> Quando os dispositivos voltam à rede, os registros são sincronizados automaticamente.</p>
+          <ul class="plan-features hero-checklist">
+            <li class="plan-feature-item"><span class="check">✓</span> Continuidade do registro, mesmo sem internet.</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Mais segurança e confiabilidade nas marcações.</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Menos ajustes manuais e retrabalho para o RH.</li>
+          </ul>
+          <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn offline-cta">Falar com um especialista</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 06. FUNCIONALIDADES -->
   <!-- Agrupamento em 4 categorias (definido com o usuário) substitui os 16 itens soltos sem título. -->
-  <section id="funcionalidades" class="section funcionalidades-panel">
+  <section id="funcionalidades" class="section funcionalidades-panel" style="display: none;">
     <img src="assets/fingerprint.svg" alt="" class="funcionalidades-fingerprint" aria-hidden="true">
     <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-1" aria-hidden="true">
     <img src="assets/blob-circle.svg" alt="" class="blob-circle blob-circle-func-2" aria-hidden="true">
@@ -257,135 +328,101 @@
   </section>
 
 
-  <!-- 06. COMO FUNCIONA (ABAS REAIS ACESSÍVEIS) -->
-  <section id="como" class="section">
+  <!-- 07. COMO FUNCIONA (O MÊS EM TRÊS MOVIMENTOS) -->
+  <section id="como" class="section como-panel">
     <div class="container">
-      <h2 class="como-intro reveal-on-scroll">O mês inteiro <span class="h1-underline">em três movimentos</span>.</h2>
-      <p class="lead">Da marcação da batida ao fechamento do espelho, sem depender de planilha.</p>
+      <h2 class="como-intro reveal-on-scroll">O mês inteiro em <span class="hl-yellow">três movimentos</span>.</h2>
+      <p class="lead como-lead">Da marcação da batida ao fechamento do espelho, sem depender de planilha.</p>
 
       <div class="como-layout">
-        <div class="tabs-list" role="tablist" aria-label="Passos de funcionamento">
-          <button class="tab-btn" role="tab" id="tab-0" aria-selected="true" aria-controls="como-video-panel" data-video="assets/videos/como-01-validacao.mp4">
-            <span class="tab-num">01</span>
-            <span class="tab-title">A equipe registra</span>
-            <span class="tab-desc">No local autorizado, com a validação que você escolher pra cada unidade: cerco no mapa, GPS, verificação facial ou rede reconhecida.</span>
+        <div class="como-steps" role="tablist" aria-label="Passos de funcionamento">
+          <button type="button" class="como-step como-step--solid reveal-on-scroll" role="tab" id="como-tab-0" aria-selected="true" aria-controls="como-video-panel" data-video="assets/videos/como-01-validacao.mp4">
+            <span class="como-step-num">01</span>
+            <span class="como-step-title">A equipe registra</span>
+            <span class="como-step-desc">No local autorizado, com a validação que você escolher pra cada unidade: cerco no mapa, GPS, verificação facial ou rede reconhecida.</span>
           </button>
 
-          <button class="tab-btn" role="tab" id="tab-1" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-02-acompanhamento.mp4">
-            <span class="tab-num">02</span>
-            <span class="tab-title">Você acompanha</span>
-            <span class="tab-desc">Você acompanha a apuração das batidas contra a jornada prevista, vê onde cada marcação aconteceu no mapa e recebe as justificativas para analisar.</span>
+          <button type="button" class="como-step reveal-on-scroll" role="tab" id="como-tab-1" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-02-acompanhamento.mp4">
+            <span class="como-step-num">02</span>
+            <span class="como-step-title">Você acompanha</span>
+            <span class="como-step-desc">Você acompanha a apuração das batidas contra a jornada prevista, vê onde cada marcação aconteceu no mapa e recebe as justificativas para analisar.</span>
           </button>
 
-          <button class="tab-btn" role="tab" id="tab-2" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-03-fechamento.mp4">
-            <span class="tab-num">03</span>
-            <span class="tab-title">O mês fecha</span>
-            <span class="tab-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</span>
+          <button type="button" class="como-step reveal-on-scroll" role="tab" id="como-tab-2" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-03-fechamento.mp4">
+            <span class="como-step-num">03</span>
+            <span class="como-step-title">O mês fecha</span>
+            <span class="como-step-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</span>
           </button>
         </div>
 
-        <div class="como-video-panel" id="como-video-panel" role="tabpanel">
-          <div class="como-video-frame">
-            <video class="como-video is-visible" muted loop playsinline autoplay preload="metadata">
-              <source src="assets/videos/como-01-validacao.mp4" type="video/mp4">
-            </video>
-            <div class="como-video-overlay"></div>
-            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="como-video-cta">Falar com o time</a>
+        <div class="como-visual">
+          <div class="como-video-panel" id="como-video-panel" role="tabpanel">
+            <div class="como-video-frame">
+              <video class="como-video is-visible" muted loop playsinline autoplay preload="metadata">
+                <source src="assets/videos/como-01-validacao.mp4" type="video/mp4">
+              </video>
+              <div class="como-video-overlay"></div>
+              <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn offline-cta como-visual-cta">Falar com um especialista</a>
+            </div>
+            <span class="como-visual-chip" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
           </div>
-          <button class="como-video-expand" type="button" aria-label="Ver em tela cheia">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </button>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- 08. REGISTRO OFFLINE -->
-  <!-- TODO: confirmar com o time de produto os textos exatos de sincronização (ex.: tempo de retenção offline, o que acontece em caso de conflito de horário) -->
-  <section id="offline" class="section offline-panel">
-    <div class="container">
-      <div class="offline-grid">
-          <div class="offline-photo-frame reveal-on-scroll">
-            <div class="offline-photo photo-img">
-              <img src="assets/offline-registro.jpg" alt="Homem usando o celular na rua com reconhecimento facial em destaque" loading="lazy">
+  <!-- 09. VALIDAÇÃO DA BATIDA -->
+  <!-- TODO: estatística "até 85% de redução do tempo gasto com fechamento de ponto" confirmada pelo usuário como métrica real e distinta do "60% menos tempo tratando ponto e jornada" usado em outras seções. -->
+  <section id="validacao" class="section">
+    <div class="container validacao-layout">
+      <div class="validacao-content">
+        <h2 class="validacao-intro reveal-on-scroll">Quatro maneiras de <span class="h1-underline">saber que a batida é real</span>.</h2>
+        <p class="lead">Cada localização tem sua própria combinação de regras.</p>
+
+        <div class="validacao-cards-grid">
+          <div class="card validacao-card-item reveal-on-scroll">
+            <div class="validacao-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
             </div>
-            <div class="offline-photo-chip">
-              <span class="offline-photo-chip-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 0 1-1-7.87A5.5 5.5 0 0 1 16.5 8h.5a4 4 0 0 1 1 7.9"/><path d="m9 15 2 2 4-4.5"/></svg></span>
-              <span>Registros salvos e sincronizados automaticamente</span>
-            </div>
+            <h3>Cerco no mapa</h3>
+            <p>Raio em metros definido por você ao redor do endereço da unidade.</p>
           </div>
 
-          <div>
-            <h2>Sem internet?<br><span class="h1-underline">O ponto não para.</span></h2>
-            <p class="lead offline-lead">O colaborador bate o ponto pelo app mesmo sem sinal. Assim que o celular encontra rede, o registro sincroniza sozinho — sem precisar reabrir nada.</p>
-
-            <div class="offline-steps">
-              <div class="offline-step reveal-on-scroll">
-                <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="m9.5 12 2 2 3.5-4"/></svg></span>
-                <div>
-                  <h3>Bate o ponto normalmente</h3>
-                  <p>O app registra a batida mesmo sem Wi-Fi ou dados.</p>
-                </div>
-              </div>
-              <div class="offline-step reveal-on-scroll">
-                <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l2-4h14l2 4"/><path d="M3 8v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/><path d="M8 12h8"/></svg></span>
-                <div>
-                  <h3>Fica guardado no aparelho</h3>
-                  <p>O registro é salvo localmente, com a data e a hora certas.</p>
-                </div>
-              </div>
-              <div class="offline-step reveal-on-scroll">
-                <span class="offline-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></span>
-                <div>
-                  <h3>Sincroniza sozinho</h3>
-                  <p>Quando a conexão volta, tudo é enviado pro sistema.</p>
-                </div>
-              </div>
+          <div class="card validacao-card-item reveal-on-scroll">
+            <div class="validacao-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
             </div>
+            <h3>GPS do dispositivo</h3>
+            <p>O GPS do celular é comparado com o cerco que você configurou.</p>
+          </div>
+
+          <div class="card validacao-card-item reveal-on-scroll">
+            <div class="validacao-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M10 16h4"/></svg>
+            </div>
+            <h3>Verificação facial</h3>
+            <p>Exigida no momento do registro, quando a localização pedir.</p>
+          </div>
+
+          <div class="card validacao-card-item reveal-on-scroll">
+            <div class="validacao-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>Rede reconhecida</h3>
+            <p>SSID ou endereço MAC cadastrados como forma adicional de identificar o local.</p>
           </div>
         </div>
       </div>
-  </section>
 
-
-  <!-- 09. VALIDAÇÃO DA BATIDA -->
-  <section id="validacao" class="section">
-    <div class="container">
-      <h2 class="validacao-intro reveal-on-scroll">Quatro maneiras de <span class="h1-underline">saber que a batida é real</span>.</h2>
-      <p class="lead">Cada localização tem sua própria combinação de regras.</p>
-
-      <div class="validacao-cards-grid">
-        <div class="card validacao-card-item reveal-on-scroll">
-          <div class="validacao-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <h3>Cerco no mapa</h3>
-          <p>Raio em metros definido por você ao redor do endereço da unidade.</p>
-        </div>
-
-        <div class="card validacao-card-item reveal-on-scroll">
-          <div class="validacao-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
-          </div>
-          <h3>GPS do dispositivo</h3>
-          <p>O GPS do celular é comparado com o cerco que você configurou.</p>
-        </div>
-
-        <div class="card validacao-card-item reveal-on-scroll">
-          <div class="validacao-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M10 16h4"/></svg>
-          </div>
-          <h3>Verificação facial</h3>
-          <p>Exigida no momento do registro, quando a localização pedir.</p>
-        </div>
-
-        <div class="card validacao-card-item reveal-on-scroll">
-          <div class="validacao-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </div>
-          <h3>Rede reconhecida</h3>
-          <p>SSID ou endereço MAC cadastrados como forma adicional de identificar o local.</p>
+      <div class="validacao-visual">
+        <img class="validacao-visual-mockup" src="assets/validacao-mockup.webp" alt="Painel do Eng Ponto mostrando a configuração de verificação por Wi-Fi e IP da rede para uma localização" loading="lazy">
+        <div class="validacao-visual-stat">
+          <p class="validacao-visual-stat-value">até <strong>85%</strong></p>
+          <p class="validacao-visual-stat-label">de redução do tempo gasto com fechamento de ponto</p>
+          <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn validacao-visual-cta">Falar com um especialista</a>
         </div>
       </div>
     </div>
@@ -397,7 +434,7 @@
     <div class="container">
       <div class="custo-grid">
           <div>
-            <h2>O que você deixa de pagar também conta.</h2>
+            <h2>O que você deixa de pagar <span class="hl-yellow">também conta.</span></h2>
 
             <div class="custo-list">
               <div class="custo-item reveal-on-scroll">
@@ -432,51 +469,155 @@
             <button class="custo-photo-expand" type="button" aria-label="Ver em tela cheia">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="17 17 7 17 7 7"/></svg>
             </button>
-            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="custo-photo-cta">Falar com o time</a>
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="custo-photo-cta">Falar com um especialista</a>
           </div>
         </div>
     </div>
   </section>
 
 
-  <!-- 12. PLANOS E PREÇOS -->
-  <section id="planos" class="section bg-tint-3">
-    <div class="container">
-      <div class="planos-header">
-        <h2>Um plano só, sem surpresa no boleto.</h2>
-        <p class="lead">Todos os recursos da plataforma no mesmo plano, sem versão limitada.</p>
+  <!-- 12. MAIS SEGURANÇA EM CADA REGISTRO -->
+  <section id="seguranca" class="section">
+    <div class="container seguranca-layout">
+      <div class="seguranca-content">
+        <h2><span class="text-gradient">Mais segurança</span><br>em cada registro.</h2>
+        <span class="seguranca-rule" aria-hidden="true"></span>
+
+        <div class="seguranca-photo-frame">
+          <div class="seguranca-photo photo-img">
+            <img src="assets/funcionalidades-team.png" alt="Equipe sorrindo em um escritório" loading="lazy">
+          </div>
+          <div class="seguranca-photo-chip">
+            <div class="seguranca-photo-chip-header">
+              <span>Você não fica sozinho.</span>
+              <span class="seguranca-photo-chip-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+              </span>
+            </div>
+            <p>Suporte de verdade, com gente de verdade, sempre que precisar.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="planos-single-grid">
-        <div class="planos-card reveal-on-scroll">
-          <!-- TODO: substituir pela foto definitiva da seção de planos -->
-          <div class="planos-photo">
-            <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
-            <img src="assets/logo.svg" alt="Eng Ponto" class="planos-photo-logo">
-            <div class="planos-photo-chip">
-              <div class="planos-photo-chip-header">
-                <span>Plano personalizado para seu time</span>
-                <span class="planos-photo-chip-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
-                </span>
+      <div class="seguranca-panel">
+        <img src="assets/fingerprint.svg" alt="" class="seguranca-fingerprint" aria-hidden="true">
+
+        <div class="seguranca-panel-text">
+          <ul class="seguranca-points">
+            <li>
+              <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
+              <p><strong>Mais agilidade:</strong> registro em segundos, sem cartão ou senha.</p>
+            </li>
+            <li>
+              <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
+              <p><strong>Mais segurança:</strong> acaba com o "ponto por amigo" e fraudes.</p>
+            </li>
+            <li>
+              <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
+              <p><strong>Validade jurídica</strong> total nos registros.</p>
+            </li>
+          </ul>
+
+          <div class="seguranca-panel-ctas">
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-primary">Falar com um especialista</a>
+            <a href="#como" class="btn btn-ghost">Ver como funciona <span class="arrow-down">↓</span></a>
+          </div>
+        </div>
+
+        <!-- TODO: substituir o mapa ilustrativo pela imagem real da tela assim que a Sabrina enviar -->
+        <div class="seguranca-visual">
+          <div class="seguranca-visual-frame">
+            <span class="seguranca-visual-notch" aria-hidden="true"></span>
+            <div class="seguranca-visual-screen">
+              <div class="seguranca-visual-status">
+                <span>9:41</span>
+                <span class="seguranca-visual-signal" aria-hidden="true">●●●</span>
               </div>
-              <p>Um controle de jornada eficiente que ajuda você a evitar problemas trabalhistas, com dados confiáveis.</p>
+              <div class="seguranca-visual-map"></div>
+              <div class="seguranca-visual-sheet">
+                <span class="seguranca-visual-sheet-label">Local verificado</span>
+                <span class="seguranca-visual-sheet-btn">Confirmar registro</span>
+              </div>
             </div>
           </div>
-          <div class="planos-card-body">
-            <div class="planos-card-badge">PLANO ÚNICO</div>
-            <ul class="plan-features">
-              <li class="plan-feature-item"><span class="check">✓</span> Registro por app, web e totem</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Painel do gestor</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Registro de ponto offline pelo app</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Verificação facial e validação por GPS ou rede</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Apuração, espelho e banco de horas</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Múltiplas localizações com fuso próprio</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Atribuição de Jornadas e Férias</li>
-              <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado</li>
-            </ul>
-            <a href="#" class="btn btn-primary plan-cta-btn">Falar com um especialista <span class="arrow" aria-hidden="true">→</span></a>
+          <span class="seguranca-visual-chip" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 13. PLANOS E PREÇOS -->
+  <section id="planos" class="section bg-tint-3">
+    <div class="container">
+      <div class="planos-layout">
+        <div class="planos-left">
+          <h2 class="planos-title">Um plano só, <span class="text-gradient">sem surpresa no boleto.</span></h2>
+
+          <div class="planos-bento">
+            <div class="planos-bento-item planos-bento-item--top reveal-on-scroll">
+              <div class="planos-bento-photo photo-img">
+                <img src="assets/planos-simples.jpg" alt="Time trocando informações em um ambiente de trabalho descontraído" loading="lazy">
+              </div>
+              <div class="planos-bento-chip planos-bento-chip--top-right">
+                <div class="planos-bento-chip-header">
+                  <span>Feito pra ser simples.</span>
+                  <span class="planos-bento-chip-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+                  </span>
+                </div>
+                <p>Sua equipe bate o ponto em segundos, de onde estiver. Sem necessidade de manual ou treinamento.</p>
+              </div>
+            </div>
+
+            <div class="planos-bento-item planos-bento-item--bottom-left reveal-on-scroll">
+              <div class="planos-bento-photo photo-img">
+                <img src="assets/planos-seguranca.jpg" alt="Dados protegidos em ambiente digital seguro" loading="lazy">
+              </div>
+              <div class="planos-bento-chip planos-bento-chip--top-left">
+                <div class="planos-bento-chip-header">
+                  <span>Sem dor de cabeça.</span>
+                  <span class="planos-bento-chip-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+                  </span>
+                </div>
+                <p>Dados seguros e prontos pra qualquer fiscalização.</p>
+              </div>
+            </div>
+
+            <div class="planos-bento-item planos-bento-item--bottom-right reveal-on-scroll">
+              <div class="planos-bento-photo photo-img">
+                <img src="assets/planos-suporte.jpg" alt="Grupo de pessoas reunidas e sorrindo juntas" loading="lazy">
+              </div>
+              <div class="planos-bento-chip planos-bento-chip--bottom-left">
+                <div class="planos-bento-chip-header">
+                  <span>Você não fica sozinho.</span>
+                  <span class="planos-bento-chip-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2" y="14" width="4" height="6" rx="2"/><rect x="18" y="14" width="4" height="6" rx="2"/></svg>
+                  </span>
+                </div>
+                <p>Suporte de verdade, com gente de verdade, sempre que precisar.</p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div class="planos-card reveal-on-scroll">
+          <div class="planos-card-badge">PLANO INICIAL</div>
+          <div class="planos-card-price"><span class="planos-card-price-value">R$4,50</span><span class="planos-card-price-unit">/colaborador</span></div>
+          <ul class="plan-features">
+            <li class="plan-feature-item"><span class="check">✓</span> Registro por app, web e totem</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Painel do gestor</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Registro de ponto offline pelo app</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Verificação facial e GPS ou rede</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Apuração/espelho/banco de horas</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Localizações com fusos próprios</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Atribuição de Jornadas e Férias</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado</li>
+          </ul>
+          <a href="#" class="btn plan-cta-btn">Falar com um especialista</a>
         </div>
       </div>
     </div>
@@ -484,23 +625,15 @@
 
 
   <!-- 14. PERGUNTAS FREQUENTES -->
-  <section id="faq" class="section bg-tint-2">
+  <section id="faq" class="section faq-panel">
     <div class="container">
       <div class="faq-layout">
         <div class="faq-intro">
           <h2>Restou alguma dúvida?</h2>
           <p class="lead">As perguntas que mais aparecem nessa conversa.</p>
-          <!-- TODO: substituir pelas fotos definitivas (equipe + colaboradora) -->
-          <div class="faq-photo-collage">
-            <div class="faq-photo-main photo-img">
-              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
-            </div>
-            <div class="faq-photo-small photo-img">
-              <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
-            </div>
-            <div class="faq-logo-badge">
-              <img src="assets/logo-white.svg" alt="Eng Ponto">
-            </div>
+          <!-- TODO: substituir pela foto definitiva -->
+          <div class="faq-photo photo-img">
+            <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
           </div>
           <a href="#" class="btn faq-cta-btn">Falar com um especialista <span class="arrow" aria-hidden="true">→</span></a>
         </div>
@@ -509,15 +642,18 @@
         <!-- Pergunta 1 (Aberta no carregamento) -->
         <div class="faq-item active">
           <button class="faq-trigger" aria-expanded="true">
-            <span>O Eng Ponto é válido legalmente?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+            <span class="faq-bubble">
+              O Eng Ponto é válido legalmente?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS nº 7, que comprova que os registros são autênticos e não foram alterados.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS nº 7, que comprova que os registros são autênticos e não foram alterados.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -525,15 +661,18 @@
         <!-- Pergunta 2 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>Preciso comprar relógio de ponto?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
+            <span class="faq-bubble">
+              Preciso comprar relógio de ponto?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Não. O registro acontece nos dispositivos que sua equipe já usa (celular, computador) com validação por localização. Se você prefere um ponto fixo pra quem trabalha presencial, a plataforma também administra totens.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Não. O registro acontece nos dispositivos que sua equipe já usa (celular, computador) com validação por localização. Se você prefere um ponto fixo pra quem trabalha presencial, a plataforma também administra totens.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -541,15 +680,18 @@
         <!-- Pergunta 3 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>Como trago o histórico do meu sistema atual?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v9m0 0l-4-4m4 4l4-4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
+            <span class="faq-bubble">
+              Como trago o histórico do meu sistema atual?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Você importa o AFD do registrador anterior. A plataforma confere os funcionários, você ajusta os horários, e as batidas antigas passam a fazer parte do mesmo acervo, sem perder os períodos de antes da implantação.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Você importa o AFD do registrador anterior. A plataforma confere os funcionários, você ajusta os horários, e as batidas antigas passam a fazer parte do mesmo acervo, sem perder os períodos de antes da implantação.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -557,15 +699,18 @@
         <!-- Pergunta 4 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>Dá para ter regras diferentes por setor?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><circle cx="9" cy="8" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/></svg></span>
+            <span class="faq-bubble">
+              Dá para ter regras diferentes por setor?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Sim. Cada grupo de regras define duração do banco de horas, como tratar faltas, limite com alerta e período de referência. Você vincula cada funcionário ao grupo que corresponde à realidade dele.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Sim. Cada grupo de regras define duração do banco de horas, como tratar faltas, limite com alerta e período de referência. Você vincula cada funcionário ao grupo que corresponde à realidade dele.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -573,15 +718,18 @@
         <!-- Pergunta 5 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>E se a empresa tiver filiais em estados diferentes?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22z"/><circle cx="12" cy="9.5" r="2.3"/></svg></span>
+            <span class="faq-bubble">
+              E se a empresa tiver filiais em estados diferentes?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Cada localização tem seu próprio fuso horário, seu calendário de feriados e seus gestores. A apuração já acompanha a realidade de cada unidade, sem você precisar ajustar nada na mão.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Cada localização tem seu próprio fuso horário, seu calendário de feriados e seus gestores. A apuração já acompanha a realidade de cada unidade, sem você precisar ajustar nada na mão.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -589,15 +737,18 @@
         <!-- Pergunta 6 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>Como o sistema evita que alguém bata o ponto pelo colega?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3"/></svg></span>
+            <span class="faq-bubble">
+              Como o sistema evita que alguém bata o ponto pelo colega?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">Pela combinação que você escolher em cada localização: cerco em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">Pela combinação que você escolher em cada localização: cerco em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -605,15 +756,18 @@
         <!-- Pergunta 7 -->
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span>O que acontece com o histórico de quem é desligado?</span>
-            <div class="faq-icon" aria-hidden="true">
-              <span class="faq-icon-h"></span>
-              <span class="faq-icon-v"></span>
-            </div>
+            <span class="faq-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/><line x1="10" y1="13" x2="14" y2="13"/></svg></span>
+            <span class="faq-bubble">
+              O que acontece com o histórico de quem é desligado?
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </span>
           </button>
           <div class="faq-content-grid">
             <div class="faq-content-inner">
-              <p class="faq-answer">O cadastro é inativado e a pessoa para de operar no sistema, mas batidas, justificativas, férias e banco de horas continuam guardados. Se ela for recontratada, é só reativar o cadastro.</p>
+              <div class="faq-answer-row">
+                <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
+                <p class="faq-answer">O cadastro é inativado e a pessoa para de operar no sistema, mas batidas, justificativas, férias e banco de horas continuam guardados. Se ela for recontratada, é só reativar o cadastro.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -685,6 +839,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=18"></script>
+  <script src="app.js?v=19"></script>
 </body>
 </html>
