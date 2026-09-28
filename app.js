@@ -103,11 +103,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // no mobile o vídeo (.como-visual) vai pra dentro do passo aberto; no desktop fica ao lado da lista
+  const comoVisual = document.querySelector('.como-visual');
+  const comoLayout = document.querySelector('.como-layout');
+  const comoMobile = window.matchMedia('(max-width: 960px)');
+  let comoCurrent = 0;
+
+  function placeComoVisual() {
+    if (!comoVisual || !comoLayout) return;
+    const target = comoMobile.matches ? comoSteps[comoCurrent].querySelector('.como-step-body-inner') : comoLayout;
+    if (comoVisual.parentElement !== target) {
+      target.appendChild(comoVisual);
+      if (comoVideo) comoVideo.play().catch(() => {});
+    }
+  }
+  comoMobile.addEventListener('change', placeComoVisual);
+  placeComoVisual();
+
   function setComoOpen(index) {
     comoSteps.forEach((s, i) => {
       s.classList.toggle('is-open', i === index);
       s.querySelector('.como-step-head').setAttribute('aria-expanded', i === index ? 'true' : 'false');
     });
+    if (index >= 0) { comoCurrent = index; placeComoVisual(); }
 
     if (index < 0 || !comoVideo || !comoVideoSource) return;
     const videoSrc = comoSteps[index].querySelector('.como-step-head').dataset.video;
@@ -218,6 +236,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     setModosActive(0);
     restartModosTimer();
+  }
+
+
+  /* 08b. PLANOS (mobile): as 3 fotos viram carrossel que avança sozinho a cada 4s; tocar/rolar reinicia a contagem */
+  const planosBento = document.querySelector('.planos-bento');
+  if (planosBento && !prefersReducedMotion) {
+    let planosTimer;
+    const startPlanosTimer = () => {
+      clearInterval(planosTimer);
+      planosTimer = setInterval(() => {
+        if (!comoMobile.matches) return;
+        const items = planosBento.children;
+        const step = items[1].offsetLeft - items[0].offsetLeft;
+        const next = (Math.round(planosBento.scrollLeft / step) + 1) % items.length;
+        planosBento.scrollTo({ left: next * step, behavior: 'smooth' });
+      }, 4000);
+    };
+    ['pointerdown', 'wheel'].forEach(ev => planosBento.addEventListener(ev, startPlanosTimer, { passive: true }));
+    startPlanosTimer();
   }
 
 

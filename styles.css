@@ -430,7 +430,7 @@ h3 {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
-  border: 1px solid var(--line);
+  border: 1px solid var(--white);
   border-radius: 0 64px 0 64px;
   box-shadow: var(--shadow-s);
   padding: 24px 22px 26px;
@@ -440,7 +440,6 @@ h3 {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover-m);
   background-color: var(--brand);
-  border-color: var(--brand);
 }
 .modos-card.is-active h3, .modos-card.is-active .modos-card-desc-text { color: var(--white); }
 .modos-card.is-active .modos-card-desc-text { color: rgba(255, 255, 255, 0.85); }
@@ -546,8 +545,8 @@ h3 {
   height: 48px;
   border-radius: 14px;
   border: none;
-  background-color: var(--brand);
-  color: var(--white);
+  background-color: var(--brand-yellow);
+  color: var(--ink-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -652,7 +651,7 @@ h3 {
 .como-steps { display: flex; flex-direction: column; gap: 16px; }
 
 /* acordeão: cabeçalho sempre visível, descrição abre/fecha (mesma técnica de grid 0fr→1fr do FAQ) */
-.como-step { border-radius: var(--radius-card); background-color: #8369F9; /* = branco 14% sobre --brand, mas opaco pra não deixar o SVG de fundo aparecer */ }
+.como-step { border: 1px solid var(--white); border-radius: var(--radius-card); background-color: #8369F9; /* = branco 14% sobre --brand, mas opaco pra não deixar o SVG de fundo aparecer */ }
 .como-step.is-open { background-color: var(--white); }
 .como-step-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 20px 24px; border: none; background: none; font: inherit; text-align: left; cursor: pointer; border-radius: inherit; }
 .como-step-text { display: flex; flex-direction: column; align-items: flex-start; }
@@ -707,6 +706,7 @@ h3 {
   position: relative;
   overflow: hidden;
   background: var(--gradient-brand);
+  border: 1px solid var(--white);
   border-radius: var(--radius-squircle);
   display: flex;
   align-items: center;
@@ -750,6 +750,7 @@ h3 {
   background-color: var(--brand);
   color: var(--white);
   padding: 20px 22px;
+  border: 1px solid var(--white);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-l);
   z-index: 2;
@@ -797,7 +798,7 @@ h3 {
 .seguranca-photo-chip-icon svg { width: 16px; height: 16px; }
 .seguranca-photo-chip p { font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.85); }
 
-.seguranca-panel { position: relative; background-color: var(--brand); border-radius: 0 var(--radius-squircle) 0 var(--radius-squircle); padding: clamp(16px, 1.5vw, 20px) clamp(28px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.seguranca-panel { position: relative; background-color: var(--brand); border: 1px solid var(--white); border-radius: 0 var(--radius-squircle) 0 var(--radius-squircle); padding: clamp(16px, 1.5vw, 20px) clamp(28px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .seguranca-panel-deco { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
 .seguranca-fingerprint { position: absolute; top: 50%; right: -50px; transform: translateY(-50%); width: clamp(260px, 28vw, 400px); height: auto; z-index: 0; opacity: 0.7; pointer-events: none; }
 
@@ -851,6 +852,7 @@ h3 {
   background: var(--gradient-brand);
   color: var(--white);
   padding: 16px 18px;
+  border: 1px solid var(--white);
   box-shadow: var(--shadow-m);
 }
 .planos-bento-chip-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
@@ -902,7 +904,7 @@ h3 {
 .faq-avatar { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background-color: var(--ink-deep); color: var(--white); display: flex; align-items: center; justify-content: center; }
 .faq-avatar svg { width: 17px; height: 17px; }
 .faq-avatar--a { background: none; border-radius: 0; order: 1; }
-.faq-bubble { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 14px; background-color: var(--white); color: var(--ink-deep); border-radius: 18px 18px 18px 4px; padding: 16px 20px; font-family: var(--font-display); font-size: 14.5px; font-weight: 700; box-shadow: var(--shadow-s); transition: box-shadow var(--t-fast) var(--ease); }
+.faq-bubble { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 14px; background-color: var(--white); color: var(--ink-deep); border: 1px solid var(--white); border-radius: 18px 18px 18px 4px; padding: 16px 20px; font-family: var(--font-display); font-size: 14.5px; font-weight: 700; box-shadow: var(--shadow-s); transition: box-shadow var(--t-fast) var(--ease); }
 .faq-trigger:hover .faq-bubble { box-shadow: var(--shadow-hover-s); }
 .faq-icon { width: 18px; height: 18px; flex-shrink: 0; color: var(--brand); transition: transform var(--t-mid) var(--ease); }
 .faq-icon svg { width: 100%; height: 100%; }
@@ -911,7 +913,7 @@ h3 {
 .faq-item.active .faq-content-grid { grid-template-rows: 1fr; }
 .faq-item.active .faq-icon { transform: rotate(180deg); }
 .faq-answer-row { display: flex; align-items: flex-start; justify-content: flex-end; gap: 12px; padding-top: 4px; }
-.faq-answer { max-width: 82%; background-color: rgba(255, 255, 255, 0.14); color: var(--white); border-radius: 18px 18px 4px 18px; padding: 14px 18px; font-size: 13.5px; line-height: 1.6; }
+.faq-answer { max-width: 82%; background-color: rgba(255, 255, 255, 0.14); color: var(--white); border: 1px solid var(--white); border-radius: 18px 18px 4px 18px; padding: 14px 18px; font-size: 13.5px; line-height: 1.6; }
 
 /* Rodapé */
 footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 13.5px; }
@@ -959,39 +961,49 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
 .validacao-cards-grid > .reveal-on-scroll:nth-child(4) { transition-delay: 270ms; }
 
 @media (max-width: 960px) {
-  #hero { --hero-content-lift: 0px; --hero-trim: 0px; display: flex; flex-direction: column; min-height: 0; padding-top: calc(var(--nav-h) + 16px); padding-bottom: 56px; }
-  /* a mulher (só do busto pra cima) fica atrás e o formulário sobe por cima dela, escondendo o corte da foto */
-  .hero-visual { position: relative; top: auto; right: auto; bottom: auto; transform: none; width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; padding-inline: var(--container-pad); order: 2; margin-top: -64px; z-index: 1; }
+  #hero { --hero-content-lift: 0px; --hero-trim: 0px; display: flex; flex-direction: column; min-height: 0; padding-bottom: 56px; }
+  /* no mobile a foto da mulher some e o formulário vem depois do título, lista e CTAs */
+  .hero-visual { position: relative; top: auto; right: auto; bottom: auto; transform: none; width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; padding-inline: var(--container-pad); order: 2; margin-top: 24px; z-index: 1; }
   .hero-bg-vector { display: none; }
   .hero-badge { display: none; }
-  .hero-photo-wrap { position: relative; left: auto; top: auto; bottom: auto; transform: none; width: min(78%, 320px); aspect-ratio: 1 / 0.955; overflow: hidden; margin: 0 auto; order: 1; z-index: 1; }
+  .hero-photo-wrap { display: none; }
   .hero-form-card { position: relative; top: auto; right: auto; transform: none; width: 100%; max-width: 420px; margin-inline: auto; }
-  .hero-grid { order: 3; margin-top: 32px; }
+  .hero-grid { order: 1; }
   .hero-content { max-width: none; }
   .como-layout { grid-template-columns: 1fr; gap: 36px; }
   .offline-panel { flex-direction: column; align-items: stretch; min-height: 0; padding: 0; }
   .offline-panel-bg { position: relative; height: 220px; }
   .offline-content { max-width: none; margin: 0; padding: 24px; }
   .validacao-layout { grid-template-columns: 1fr; gap: 40px; }
-  .validacao-visual { margin: 24px 0 28px; }
+  .validacao-visual { margin: -8px 0 28px; }
   .validacao-visual-mockup { transform: none; }
-  .validacao-visual-stat { right: -12px; }
+  .validacao-visual-stat { right: auto; left: 50%; transform: translateX(-50%); }
   .seguranca-layout { grid-template-columns: 1fr; gap: 56px; }
   .seguranca-isotipo { display: none; }
   .seguranca-photo-frame { flex: none; min-height: 0; aspect-ratio: 4 / 3; }
-  .seguranca-panel { flex-direction: column; }
-  .seguranca-visual { margin-top: 8px; }
+  .seguranca-panel { flex-direction: column; align-items: stretch; padding-block: 44px 32px; }
+  .seguranca-visual { order: -1; align-self: center; margin-top: 0; }
   .modos-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .funcionalidades-grid { grid-template-columns: 1fr; gap: 24px; }
   .faq-layout, .custo-grid { grid-template-columns: 1fr; gap: 28px; }
   .custo-photo-frame { order: -1; width: min(100%, 360px); aspect-ratio: 4 / 3; margin-inline: auto; }
   .planos-layout { grid-template-columns: 1fr; gap: 28px; }
-  .planos-bento { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "top" "bottom-left" "bottom-right"; }
-  .planos-bento-item--top .planos-bento-photo { aspect-ratio: 16 / 9; }
-  .planos-bento-item--bottom-left .planos-bento-photo { aspect-ratio: 4 / 3; }
-  .planos-bento-item--bottom-right .planos-bento-photo { aspect-ratio: 4 / 3; }
+  .planos-bento { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .planos-bento::-webkit-scrollbar { display: none; }
+  .planos-bento-item { flex: 0 0 100%; height: 240px; scroll-snap-align: start; }
+  .planos-bento-item.reveal-on-scroll { opacity: 1; translate: none; scale: none; }
   .planos-card { padding: 28px; }
-  .faq-intro { position: static; }
+  .faq-layout { gap: 0; }
+  .faq-intro { display: contents; }
+  .faq-intro h2 { order: 1; }
+  .faq-intro .lead { order: 2; }
+  .faq-photo { order: 3; flex: none; height: 200px; min-height: 0; }
+  .faq-list { order: 4; }
+  .faq-cta-btn { order: 5; margin-top: 28px; }
+  .como-step-body-inner .como-visual { height: auto; padding: 0 16px 16px; }
+  .como-step-body-inner .como-video-panel { height: auto; }
+  .como-step-body-inner .como-video-frame { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
+  .como-step-body-inner .como-visual-chip { display: none; }
   .section, .como-panel, .custo-panel, #planos, #faq { padding-block: 56px; }
   .seguranca-content h2 { line-height: 1.25; margin-bottom: 24px; }
   .faq-intro h2 { font-size: clamp(1.75rem, 3.8vw, 2.6rem); }
@@ -1010,6 +1022,8 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .footer-grid { grid-template-columns: 1fr; }
   .whatsapp-float { width: 48px; height: 48px; bottom: 16px; right: 16px; }
   #nav .btn { padding: 9px 20px; font-size: 14px; }
+  .clientes-row { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .clientes-logos { justify-content: center; }
   .hero-ctas { flex-direction: column; gap: 12px; width: 100%; }
   .hero-ctas .btn, .offline-content .offline-cta, .seguranca-panel-ctas .btn { width: 100%; }
   .seguranca-panel-ctas { grid-template-columns: 1fr; }
