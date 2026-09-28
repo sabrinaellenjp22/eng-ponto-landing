@@ -796,7 +796,7 @@ h3 {
 .seguranca-photo-chip:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover-m); }
 .seguranca-photo-chip-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 .seguranca-photo-chip-header h3 { color: var(--white); font-size: 17px; }
-.seguranca-photo-chip-icon { width: 36px; height: 36px; border-radius: 10px; background-color: var(--white); color: var(--brand-light); rotate: -6deg; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform var(--t-fast) var(--ease); }
+.seguranca-photo-chip-icon { width: 36px; height: 36px; border-radius: 10px; background-color: var(--brand-yellow); color: var(--ink-deep); rotate: -6deg; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform var(--t-fast) var(--ease); }
 .seguranca-photo-chip:hover .seguranca-photo-chip-icon { transform: scale(1.1); }
 .seguranca-photo-chip-icon svg { width: 16px; height: 16px; }
 .seguranca-photo-chip p { font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.85); }
@@ -883,7 +883,7 @@ h3 {
 .planos-card-badge { display: inline-block; align-self: flex-end; background-color: var(--ink-deep); color: var(--white); font-family: var(--font-mono); font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: var(--radius-pill); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
 .planos-card-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 20px; }
 .planos-card-price-value { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 800; color: var(--white); }
-.planos-card-price-unit { font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); position: relative; top: -1.6em; /* sobe 1 linha: a 2ª linha fica na base do preço e a 1ª no topo dele */ }
+.planos-card-price-unit { font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
 .planos-card .plan-features { gap: 11px; margin-bottom: 24px; }
 .planos-card .plan-feature-item { font-size: 13px; }
 .plan-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
@@ -894,7 +894,7 @@ h3 {
 .planos-card .plan-cta-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover-m); }
 
 #faq { padding-block: clamp(48px, 6vw, 88px); }
-.faq-panel { background: var(--gradient-brand); }
+.faq-panel { background: var(--brand); }
 .faq-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 48px; align-items: stretch; }
 .faq-intro { position: sticky; top: 108px; display: flex; flex-direction: column; }
 .faq-intro h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); color: var(--white); }
@@ -933,7 +933,7 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
 .footer-link { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color var(--t-fast) var(--ease); }
 .footer-link:hover { color: var(--white); }
 .footer-link-icon { display: flex; align-items: center; gap: 10px; }
-.footer-contact-icon { width: 26px; height: 26px; border-radius: 7px; background: var(--gradient-brand); color: var(--white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.footer-contact-icon { width: 26px; height: 26px; border-radius: 7px; background: var(--brand); color: var(--white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); }
 .footer-bottom-inner { padding-block: 22px; font-size: 12.5px; color: rgba(255, 255, 255, 0.45); text-align: center; }
 
@@ -976,6 +976,7 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .hero-content { max-width: none; }
   #hero h1 { text-align: center; align-self: stretch; }
   #hero .lead br { display: none; }
+  .section h2, .section .lead { text-align: center; }
   .hero-checklist .plan-feature-item { font-size: 12px; }
   .como-layout { grid-template-columns: 1fr; gap: 36px; }
   .offline-panel { flex-direction: column; align-items: stretch; min-height: 0; padding: 0; }
@@ -989,7 +990,7 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .seguranca-isotipo { display: none; }
   .seguranca-photo-frame { flex: none; min-height: 0; aspect-ratio: 4 / 3; }
   .seguranca-panel { flex-direction: column; align-items: stretch; padding-block: 44px 32px; }
-  .seguranca-visual { order: -1; align-self: center; margin-top: 0; }
+  .seguranca-visual { display: none; }
   .modos-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .modos-card { padding: 18px 20px 20px; }
   .modos-card-number { top: 14px; right: 18px; width: 36px; height: 36px; font-size: 15px; }
