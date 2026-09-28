@@ -79,42 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* 03. CARDS INTERATIVOS DE "COMO FUNCIONA" (troca o vídeo ao passar o mouse) */
+  /* 03. ACORDEÃO DE "COMO FUNCIONA" (o passo aberto define o vídeo ao lado; o primeiro já vem aberto) */
   const comoSteps = document.querySelectorAll('.como-step');
   const comoVideo = document.querySelector('.como-video');
   const comoVideoSource = comoVideo ? comoVideo.querySelector('source') : null;
 
-  comoSteps.forEach((btn, index) => {
-    btn.addEventListener('mouseenter', () => switchComoStep(index));
-    btn.addEventListener('focus', () => switchComoStep(index));
-    btn.addEventListener('click', () => switchComoStep(index));
+  comoSteps.forEach((step, index) => {
+    const head = step.querySelector('.como-step-head');
+    head.addEventListener('click', () => setComoOpen(step.classList.contains('is-open') ? -1 : index));
 
-    btn.addEventListener('keydown', (e) => {
+    head.addEventListener('keydown', (e) => {
       let targetIndex = null;
-      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      if (e.key === 'ArrowDown') {
         targetIndex = (index + 1) % comoSteps.length;
-      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      } else if (e.key === 'ArrowUp') {
         targetIndex = (index - 1 + comoSteps.length) % comoSteps.length;
       }
 
       if (targetIndex !== null) {
         e.preventDefault();
-        comoSteps[targetIndex].focus();
+        comoSteps[targetIndex].querySelector('.como-step-head').focus();
       }
     });
   });
 
-  function switchComoStep(index) {
-    const active = comoSteps[index];
-
-    comoSteps.forEach((b, i) => {
-      const isActive = i === index;
-      b.classList.toggle('como-step--solid', isActive);
-      b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  function setComoOpen(index) {
+    comoSteps.forEach((s, i) => {
+      s.classList.toggle('is-open', i === index);
+      s.querySelector('.como-step-head').setAttribute('aria-expanded', i === index ? 'true' : 'false');
     });
 
-    if (!comoVideo || !comoVideoSource) return;
-    const videoSrc = active.dataset.video;
+    if (index < 0 || !comoVideo || !comoVideoSource) return;
+    const videoSrc = comoSteps[index].querySelector('.como-step-head').dataset.video;
     if (comoVideoSource.getAttribute('src') !== videoSrc) {
       comoVideoSource.setAttribute('src', videoSrc);
       comoVideo.load();
@@ -189,6 +185,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  /* 08. TRÊS FORMAS DE BATER O PONTO: um card sempre ativo (começa no 1º). O mouse troca o ativo e,
+     enquanto não houver mouse sobre nenhum card, o destaque avança sozinho a cada 6s */
+  const modosCards = [...document.querySelectorAll('.modos-card')];
+  if (modosCards.length > 0) {
+    let modosIndex = 0;
+    let modosHover = false;
+    let modosTimer;
+    const setModosActive = (i) => {
+      modosIndex = i;
+      modosCards.forEach((c, j) => c.classList.toggle('is-active', j === i));
+    };
+    const restartModosTimer = () => {
+      clearInterval(modosTimer);
+      if (prefersReducedMotion) return;
+      modosTimer = setInterval(() => {
+        if (!modosHover) setModosActive((modosIndex + 1) % modosCards.length);
+      }, 6000);
+    };
+    modosCards.forEach((card, i) => {
+      card.addEventListener('pointerenter', (e) => {
+        setModosActive(i);
+        modosHover = e.pointerType === 'mouse';
+        restartModosTimer();
+      });
+      card.addEventListener('pointerleave', () => {
+        modosHover = false;
+        restartModosTimer();
+      });
+    });
+    setModosActive(0);
+    restartModosTimer();
+  }
 
 
   /* 09. REVELAÇÃO NO SCROLL (INTERSECTION OBSERVER ABAIXO DA DOBRA) */

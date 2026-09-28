@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controle de Ponto Eletrônico REP-P | Eng Ponto</title>
-  <meta name="description" content="Ponto eletrônico conforme a Portaria 671, com AFD assinado em um clique, validação de local em camadas e importação do histórico do seu sistema atual.">
+  <meta name="description" content="Ponto eletrônico conforme a Portaria 671, com AFD assinado, validação de local em camadas e importação do histórico do seu sistema atual.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=139">
+  <link rel="stylesheet" href="styles.css?v=171">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
         "name": "Eng Ponto",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web, iOS, Android",
-        "description": "Controle de ponto eletrônico homologado REP-P conforme Portaria MTP nº 671 com assinatura digital PKCS nº 7."
+        "description": "Controle de ponto eletrônico homologado REP-P conforme Portaria MTP nº 671 com assinatura digital PKCS#7."
       },
       {
         "@type": "FAQPage",
@@ -37,7 +37,7 @@
             "name": "O Eng Ponto é válido legalmente?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS nº 7, que comprova que os registros são autênticos e não foram alterados."
+              "text": "Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS#7, que comprova que os registros são autênticos e não foram alterados."
             }
           },
           {
@@ -77,7 +77,7 @@
             "name": "Como o sistema evita que alguém bata o ponto pelo colega?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pela combinação que você escolher em cada localização: cerco em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC."
+              "text": "Pela combinação que você escolher em cada localização: cerca virtual em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC."
             }
           },
           {
@@ -106,14 +106,13 @@
       <nav aria-label="Menu principal">
         <ul class="nav-links">
           <li><a href="#como" class="nav-link">Como funciona</a></li>
-          <li><a href="#funcionalidades" class="nav-link">Funcionalidades</a></li>
+          <li><a href="#validacao" class="nav-link">Validação</a></li>
           <li><a href="#planos" class="nav-link">Planos</a></li>
           <li><a href="#faq" class="nav-link">Dúvidas</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <!-- TODO: substituir pelo número real do WhatsApp -->
-        <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-primary">Fale conosco</a>
+        <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn btn-primary">Fale conosco</a>
       </div>
     </div>
   </header>
@@ -128,16 +127,6 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-badge hero-badge-laptop" aria-hidden="true" title="Navegador (Web)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
-      </div>
-      <div class="hero-badge hero-badge-phone" aria-hidden="true" title="App no celular">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-      </div>
-      <div class="hero-badge hero-badge-totem" aria-hidden="true" title="Totem físico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="13" rx="2"/><circle cx="12" cy="9.5" r="2.2"/><line x1="12" y1="16" x2="12" y2="19"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
-      </div>
-
       <!-- TODO: os 6 campos abaixo e o texto de consentimento são um preenchimento provisório -
            confirmar com o time quais dados reais devem ser coletados e para onde o formulário deve enviar os dados (não há backend configurado ainda) -->
       <div class="hero-form-card">
@@ -148,12 +137,31 @@
           <input type="tel" name="whatsapp" placeholder="WhatsApp*" autocomplete="tel" required>
           <input type="text" name="empresa" placeholder="Empresa*" required>
           <input type="text" name="cargo" placeholder="Cargo*" required>
-          <input type="text" name="colaboradores" placeholder="Nº de colaboradores*" required>
+          <div class="hero-select-wrap">
+            <div class="hero-badge hero-badge-laptop" aria-hidden="true" title="Navegador (Web)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+            </div>
+            <div class="hero-badge hero-badge-phone" aria-hidden="true" title="App no celular">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            </div>
+            <div class="hero-badge hero-badge-totem" aria-hidden="true" title="Totem físico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="13" rx="2"/><circle cx="12" cy="9.5" r="2.2"/><line x1="12" y1="16" x2="12" y2="19"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+            </div>
+            <select name="colaboradores" aria-label="Nº de colaboradores" required>
+              <option value="" disabled selected hidden>Nº de colaboradores*</option>
+              <option value="1-10">1 a 10</option>
+              <option value="11-50">11 a 50</option>
+              <option value="51-100">51 a 100</option>
+              <option value="101-250">101 a 250</option>
+              <option value="251-500">251 a 500</option>
+              <option value="500+">Mais de 500</option>
+            </select>
+          </div>
           <label class="hero-form-consent">
             <input type="checkbox" required>
             <span>Aceito receber comunicações do Eng Ponto por e-mail e WhatsApp. Ao informar meus dados, concordo com a política de privacidade.</span>
           </label>
-          <button type="submit" class="btn hero-form-submit">Falar com um especialista</button>
+          <button type="submit" class="btn hero-form-submit">Solicitar contato</button>
         </form>
       </div>
     </div>
@@ -161,19 +169,18 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>De onde sua equipe estiver, o ponto já nasce em <span class="hl-yellow">conformidade.</span></h1>
-        <p class="lead">Celular, computador ou totem: não importa onde a equipe bate o ponto, o registro sai pronto pra fiscalização.</p>
+        <p class="lead">Ponto eletrônico no celular, no computador ou no totem:<br>o registro sai pronto pra fiscalização.</p>
 
         <ul class="plan-features hero-checklist">
-          <li class="plan-feature-item"><span class="check">✓</span> App, navegador ou totem. Cada um bate o ponto onde for mais fácil.</li>
-          <li class="plan-feature-item"><span class="check">✓</span> Validado por GPS, rede ou reconhecimento facial, mesmo sem internet.</li>
-          <li class="plan-feature-item"><span class="check">✓</span> RH gasta até 60% menos tempo tratando ponto e jornada.</li>
-          <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado, pronta pra fiscalização.</li>
+          <li class="plan-feature-item"><span class="check">✓</span> <span>Importe o histórico do seu sistema atual, sem perder.</span></li>
+          <li class="plan-feature-item"><span class="check">✓</span> <span>Validado por GPS, rede ou reconhecimento facial.</span></li>
+          <li class="plan-feature-item"><span class="check">✓</span> <span>RH gasta até 60% menos tempo tratando ponto.</span></li>
+          <li class="plan-feature-item"><span class="check">✓</span> <span>AFD do período assinado digitalmente.</span></li>
         </ul>
 
         <div class="hero-ctas">
-          <!-- TODO: substituir pelo número real do WhatsApp -->
-          <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-primary">Falar com um especialista</a>
-          <a href="#modos" class="btn btn-ghost">Ver como funciona <span class="arrow arrow-down" aria-hidden="true">↓</span></a>
+          <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn btn-primary">Falar com um especialista</a>
+          <a href="#modos" class="btn btn-ghost">Ver as 3 formas de registro <span class="arrow arrow-down" aria-hidden="true">↓</span></a>
         </div>
       </div>
     </div>
@@ -227,17 +234,17 @@
 
 
   <!-- 04. EMPRESAS QUE CONFIAM -->
-  <!-- TODO: logos reais dos clientes ainda pendentes (o usuário vai enviar) - usando placeholders genéricos por enquanto.
-       O mockup enviado tinha "NO EVAGAS" (nome de outro projeto usado como referência/template); ajustado pra "Eng Ponto" aqui. -->
+  <!-- Logos copiados da seção "Empresas que já confiam no eVagas" (evagas-landing.vercel.app). -->
   <section id="clientes" class="section clientes-panel">
     <div class="container clientes-row">
       <p class="clientes-eyebrow">Empresas que já confiam<br>no Eng Ponto</p>
       <div class="clientes-logos">
-        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
-        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
-        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
-        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
-        <span class="cliente-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="8" y1="8" x2="10" y2="8"/><line x1="8" y1="12" x2="10" y2="12"/><line x1="8" y1="16" x2="10" y2="16"/><line x1="14" y1="8" x2="16" y2="8"/><line x1="14" y1="12" x2="16" y2="12"/></svg>Empresa</span>
+        <img src="assets/clientes/logo-orbytis.svg" alt="Orbytis" class="cliente-logo" loading="lazy">
+        <img src="assets/clientes/logo-engeselt.svg" alt="Engeselt" class="cliente-logo" loading="lazy">
+        <img src="assets/clientes/logo-voltec.svg" alt="Voltec" class="cliente-logo cliente-logo--sm" loading="lazy">
+        <img src="assets/clientes/logo-sentech.svg" alt="Sentech" class="cliente-logo cliente-logo--sm" loading="lazy">
+        <img src="assets/clientes/logo-engeselt-energia.svg" alt="Engeselt Energia" class="cliente-logo" loading="lazy">
+        <img src="assets/clientes/logo-engeselt-esco.svg" alt="Engeselt ESCO" class="cliente-logo" loading="lazy">
       </div>
     </div>
   </section>
@@ -254,11 +261,11 @@
           <h2>Reconhecimento facial offline no <span class="hl-yellow">Eng Ponto</span></h2>
           <p class="lead offline-lead"><strong>Os colaboradores registram o ponto por reconhecimento facial mesmo sem internet.</strong> Quando os dispositivos voltam à rede, os registros são sincronizados automaticamente.</p>
           <ul class="plan-features hero-checklist">
-            <li class="plan-feature-item"><span class="check">✓</span> Continuidade do registro, mesmo sem internet.</li>
-            <li class="plan-feature-item"><span class="check">✓</span> Mais segurança e confiabilidade nas marcações.</li>
-            <li class="plan-feature-item"><span class="check">✓</span> Menos ajustes manuais e retrabalho para o RH.</li>
+            <li class="plan-feature-item"><span class="check">✓</span> A falta de sinal não interrompe o registro.</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Vale pra equipe externa ou em campo, onde a conexão oscila.</li>
+            <li class="plan-feature-item"><span class="check">✓</span> Menos ajuste manual e retrabalho pro RH.</li>
           </ul>
-          <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn offline-cta">Falar com um especialista</a>
+          <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn offline-cta">Quero o ponto offline</a>
         </div>
       </div>
     </div>
@@ -330,39 +337,68 @@
 
   <!-- 07. COMO FUNCIONA (O MÊS EM TRÊS MOVIMENTOS) -->
   <section id="como" class="section como-panel">
+    <img src="assets/decor-threads.svg" alt="" class="como-decor como-decor--bl" aria-hidden="true" loading="lazy">
     <div class="container">
       <h2 class="como-intro reveal-on-scroll">O mês inteiro em <span class="hl-yellow">três movimentos</span>.</h2>
       <p class="lead como-lead">Da marcação da batida ao fechamento do espelho, sem depender de planilha.</p>
 
       <div class="como-layout">
-        <div class="como-steps" role="tablist" aria-label="Passos de funcionamento">
-          <button type="button" class="como-step como-step--solid reveal-on-scroll" role="tab" id="como-tab-0" aria-selected="true" aria-controls="como-video-panel" data-video="assets/videos/como-01-validacao.mp4">
-            <span class="como-step-num">01</span>
-            <span class="como-step-title">A equipe registra</span>
-            <span class="como-step-desc">No local autorizado, com a validação que você escolher pra cada unidade: cerco no mapa, GPS, verificação facial ou rede reconhecida.</span>
-          </button>
+        <!-- acordeão: o passo aberto define o vídeo ao lado; o primeiro já vem aberto -->
+        <div class="como-steps">
+          <div class="como-step is-open reveal-on-scroll">
+            <button type="button" class="como-step-head" id="como-tab-0" aria-expanded="true" aria-controls="como-panel-0" data-video="assets/videos/como-01-validacao.mp4">
+              <span class="como-step-text">
+                <span class="como-step-num">01</span>
+                <span class="como-step-title">A equipe registra</span>
+              </span>
+              <span class="como-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+            <div class="como-step-body" id="como-panel-0" role="region" aria-labelledby="como-tab-0">
+              <div class="como-step-body-inner">
+                <p class="como-step-desc">A equipe bate o ponto no local autorizado, e a validação que você escolheu pra cada unidade confirma que a batida é real.</p>
+              </div>
+            </div>
+          </div>
 
-          <button type="button" class="como-step reveal-on-scroll" role="tab" id="como-tab-1" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-02-acompanhamento.mp4">
-            <span class="como-step-num">02</span>
-            <span class="como-step-title">Você acompanha</span>
-            <span class="como-step-desc">Você acompanha a apuração das batidas contra a jornada prevista, vê onde cada marcação aconteceu no mapa e recebe as justificativas para analisar.</span>
-          </button>
+          <div class="como-step reveal-on-scroll">
+            <button type="button" class="como-step-head" id="como-tab-1" aria-expanded="false" aria-controls="como-panel-1" data-video="assets/videos/como-02-acompanhamento.mp4">
+              <span class="como-step-text">
+                <span class="como-step-num">02</span>
+                <span class="como-step-title">Você acompanha</span>
+              </span>
+              <span class="como-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+            <div class="como-step-body" id="como-panel-1" role="region" aria-labelledby="como-tab-1">
+              <div class="como-step-body-inner">
+                <p class="como-step-desc">A apuração compara as batidas com a jornada prevista, o mapa mostra onde cada marcação aconteceu e as justificativas chegam pra você analisar.</p>
+              </div>
+            </div>
+          </div>
 
-          <button type="button" class="como-step reveal-on-scroll" role="tab" id="como-tab-2" aria-selected="false" aria-controls="como-video-panel" data-video="assets/videos/como-03-fechamento.mp4">
-            <span class="como-step-num">03</span>
-            <span class="como-step-title">O mês fecha</span>
-            <span class="como-step-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</span>
-          </button>
+          <div class="como-step reveal-on-scroll">
+            <button type="button" class="como-step-head" id="como-tab-2" aria-expanded="false" aria-controls="como-panel-2" data-video="assets/videos/como-03-fechamento.mp4">
+              <span class="como-step-text">
+                <span class="como-step-num">03</span>
+                <span class="como-step-title">O mês fecha</span>
+              </span>
+              <span class="como-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+            <div class="como-step-body" id="como-panel-2" role="region" aria-labelledby="como-tab-2">
+              <div class="como-step-body-inner">
+                <p class="como-step-desc">O espelho fecha no período que você configurou, o banco de horas segue as regras do grupo, e o AFD já sai pronto pra exportar.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="como-visual">
-          <div class="como-video-panel" id="como-video-panel" role="tabpanel">
+          <div class="como-video-panel">
             <div class="como-video-frame">
               <video class="como-video is-visible" muted loop playsinline autoplay preload="metadata">
                 <source src="assets/videos/como-01-validacao.mp4" type="video/mp4">
               </video>
               <div class="como-video-overlay"></div>
-              <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn offline-cta como-visual-cta">Falar com um especialista</a>
+              <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn offline-cta como-visual-cta">Tirar dúvidas no WhatsApp</a>
             </div>
             <span class="como-visual-chip" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
@@ -387,8 +423,8 @@
             <div class="validacao-card-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
             </div>
-            <h3>Cerco no mapa</h3>
-            <p>Raio em metros definido por você ao redor do endereço da unidade.</p>
+            <h3>Cerca virtual no mapa</h3>
+            <p>Raio definido por você ao redor da unidade.</p>
           </div>
 
           <div class="card validacao-card-item reveal-on-scroll">
@@ -396,7 +432,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
             </div>
             <h3>GPS do dispositivo</h3>
-            <p>O GPS do celular é comparado com o cerco que você configurou.</p>
+            <p>GPS do celular comparado com a cerca configurada.</p>
           </div>
 
           <div class="card validacao-card-item reveal-on-scroll">
@@ -404,7 +440,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 8h6M9 12h6M10 16h4"/></svg>
             </div>
             <h3>Verificação facial</h3>
-            <p>Exigida no momento do registro, quando a localização pedir.</p>
+            <p>Exigida no registro, quando a localização pedir.</p>
           </div>
 
           <div class="card validacao-card-item reveal-on-scroll">
@@ -412,7 +448,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
             </div>
             <h3>Rede reconhecida</h3>
-            <p>SSID ou endereço MAC cadastrados como forma adicional de identificar o local.</p>
+            <p>SSID ou MAC cadastrados como identificação adicional do local.</p>
           </div>
         </div>
       </div>
@@ -422,7 +458,7 @@
         <div class="validacao-visual-stat">
           <p class="validacao-visual-stat-value">até <strong>85%</strong></p>
           <p class="validacao-visual-stat-label">de redução do tempo gasto com fechamento de ponto</p>
-          <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn validacao-visual-cta">Falar com um especialista</a>
+          <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn validacao-visual-cta">Fechar o ponto mais rápido</a>
         </div>
       </div>
     </div>
@@ -449,14 +485,14 @@
                   <h3>Hora extra sob controle</h3>
                   <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M15.2 9.3H10.8a2 2 0 0 0 0 4h2.4a2 2 0 0 1 0 4H8.8M12 7v2M12 15v2"/></svg></span>
                 </div>
-                <p>Acompanhe em tempo real quantas horas extras estão sendo geradas e quanto isso representa em reais, sem depender de planilha.</p>
+                <p>Acompanhe em tempo real quantas horas extras estão sendo geradas e quanto isso representa em reais.</p>
               </div>
               <div class="custo-item reveal-on-scroll">
                 <div class="custo-item-header">
                   <h3>Tranquilidade com a legislação</h3>
                   <span class="custo-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><polyline points="9 12 11 14 15 10"/></svg></span>
                 </div>
-                <p>Registros de ponto confiáveis e rastreáveis, prontos para fiscalização, para você não ser pego de surpresa em uma auditoria trabalhista.</p>
+                <p>Registros de ponto confiáveis e rastreáveis, pra você não ser pego de surpresa em uma auditoria trabalhista.</p>
               </div>
             </div>
           </div>
@@ -469,7 +505,7 @@
             <button class="custo-photo-expand" type="button" aria-label="Ver em tela cheia">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="17 17 7 17 7 7"/></svg>
             </button>
-            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="custo-photo-cta">Falar com um especialista</a>
+            <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="custo-photo-cta">Conversar sobre meu cenário</a>
           </div>
         </div>
     </div>
@@ -480,8 +516,8 @@
   <section id="seguranca" class="section">
     <div class="container seguranca-layout">
       <div class="seguranca-content">
-        <h2><span class="text-gradient">Mais segurança</span><br>em cada registro.</h2>
-        <span class="seguranca-rule" aria-hidden="true"></span>
+        <img src="assets/favicon.svg" alt="" class="seguranca-isotipo" aria-hidden="true">
+        <h2><span class="text-gradient">Mais segurança</span><br><span class="seguranca-accent">em cada registro.</span></h2>
 
         <div class="seguranca-photo-frame">
           <div class="seguranca-photo photo-img">
@@ -489,56 +525,45 @@
           </div>
           <div class="seguranca-photo-chip">
             <div class="seguranca-photo-chip-header">
-              <span>Você não fica sozinho.</span>
+              <h3>Tudo fica rastreável.</h3>
               <span class="seguranca-photo-chip-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
               </span>
             </div>
-            <p>Suporte de verdade, com gente de verdade, sempre que precisar.</p>
+            <p>Onde e quando cada registro aconteceu, sempre à mão no painel.</p>
           </div>
         </div>
       </div>
 
       <div class="seguranca-panel">
-        <img src="assets/fingerprint.svg" alt="" class="seguranca-fingerprint" aria-hidden="true">
+        <span class="seguranca-panel-deco" aria-hidden="true"><img src="assets/fingerprint.svg" alt="" class="seguranca-fingerprint"></span>
 
         <div class="seguranca-panel-text">
           <ul class="seguranca-points">
             <li>
               <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
-              <p><strong>Mais agilidade:</strong> registro em segundos, sem cartão ou senha.</p>
+              <p><strong>Agilidade:</strong> registro em segundos, sem cartão ou senha.</p>
             </li>
             <li>
               <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
-              <p><strong>Mais segurança:</strong> acaba com o "ponto por amigo" e fraudes.</p>
+              <p><strong>Antifraude:</strong> evita o "ponto por amigo" e outras fraudes.</p>
             </li>
             <li>
               <span class="seguranca-point-arrow" aria-hidden="true">↗</span>
-              <p><strong>Validade jurídica</strong> total nos registros.</p>
+              <p><strong>Validade legal:</strong> registros conforme a Portaria MTP nº 671.</p>
             </li>
           </ul>
 
           <div class="seguranca-panel-ctas">
-            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-primary">Falar com um especialista</a>
-            <a href="#como" class="btn btn-ghost">Ver como funciona <span class="arrow-down">↓</span></a>
+            <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn btn-primary">Quero registros mais seguros</a>
+            <a href="#planos" class="btn btn-ghost">Ver os planos <span class="arrow-down">↓</span></a>
           </div>
         </div>
 
-        <!-- TODO: substituir o mapa ilustrativo pela imagem real da tela assim que a Sabrina enviar -->
         <div class="seguranca-visual">
           <div class="seguranca-visual-frame">
             <span class="seguranca-visual-notch" aria-hidden="true"></span>
-            <div class="seguranca-visual-screen">
-              <div class="seguranca-visual-status">
-                <span>9:41</span>
-                <span class="seguranca-visual-signal" aria-hidden="true">●●●</span>
-              </div>
-              <div class="seguranca-visual-map"></div>
-              <div class="seguranca-visual-sheet">
-                <span class="seguranca-visual-sheet-label">Local verificado</span>
-                <span class="seguranca-visual-sheet-btn">Confirmar registro</span>
-              </div>
-            </div>
+            <img src="assets/seguranca-app.png" alt="Tela do app com o mapa da localização verificada e o botão Confirmar Registro" class="seguranca-visual-screen" width="390" height="844" loading="lazy">
           </div>
           <span class="seguranca-visual-chip" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 0-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3"/></svg>
@@ -583,7 +608,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
                   </span>
                 </div>
-                <p>Dados seguros e prontos pra qualquer fiscalização.</p>
+                <p>Dados seguros, registros guardados e AFD assinado quando você precisar.</p>
               </div>
             </div>
 
@@ -605,8 +630,8 @@
         </div>
 
         <div class="planos-card reveal-on-scroll">
-          <div class="planos-card-badge">PLANO INICIAL</div>
-          <div class="planos-card-price"><span class="planos-card-price-value">R$4,50</span><span class="planos-card-price-unit">/colaborador</span></div>
+          <div class="planos-card-badge">PLANO ÚNICO</div>
+          <div class="planos-card-price"><span class="planos-card-price-value">R$4,50</span><span class="planos-card-price-unit">/colaborador<br>por mês</span></div>
           <ul class="plan-features">
             <li class="plan-feature-item"><span class="check">✓</span> Registro por app, web e totem</li>
             <li class="plan-feature-item"><span class="check">✓</span> Painel do gestor</li>
@@ -617,7 +642,7 @@
             <li class="plan-feature-item"><span class="check">✓</span> Atribuição de Jornadas e Férias</li>
             <li class="plan-feature-item"><span class="check">✓</span> Exportação de AFD assinado</li>
           </ul>
-          <a href="#" class="btn plan-cta-btn">Falar com um especialista</a>
+          <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn plan-cta-btn">Quero este plano</a>
         </div>
       </div>
     </div>
@@ -630,12 +655,12 @@
       <div class="faq-layout">
         <div class="faq-intro">
           <h2>Restou alguma dúvida?</h2>
-          <p class="lead">As perguntas que mais aparecem nessa conversa.</p>
+          <p class="lead">As dúvidas mais comuns antes de contratar.</p>
           <!-- TODO: substituir pela foto definitiva -->
           <div class="faq-photo photo-img">
             <img src="assets/placeholder-mulher-tablet.jpg" alt="" loading="lazy">
           </div>
-          <a href="#" class="btn faq-cta-btn">Falar com um especialista <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn faq-cta-btn">Perguntar a um especialista <span class="arrow" aria-hidden="true">→</span></a>
         </div>
 
       <div class="faq-list">
@@ -652,7 +677,7 @@
             <div class="faq-content-inner">
               <div class="faq-answer-row">
                 <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
-                <p class="faq-answer">Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS nº 7, que comprova que os registros são autênticos e não foram alterados.</p>
+                <p class="faq-answer">Sim. A plataforma é habilitada como REP-P, o Registrador Eletrônico de Ponto por Programa da Portaria MTP nº 671, e gera o AFD do período com a assinatura digital PKCS#7, que comprova que os registros são autênticos e não foram alterados.</p>
               </div>
             </div>
           </div>
@@ -747,7 +772,7 @@
             <div class="faq-content-inner">
               <div class="faq-answer-row">
                 <img class="faq-avatar faq-avatar--a" src="assets/favicon.svg" alt="">
-                <p class="faq-answer">Pela combinação que você escolher em cada localização: cerco em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC.</p>
+                <p class="faq-answer">Pela combinação que você escolher em cada localização: cerca virtual em metros no mapa, comparação da coordenada do dispositivo, verificação facial no momento do registro e reconhecimento da rede por SSID ou endereço MAC.</p>
               </div>
             </div>
           </div>
@@ -785,12 +810,11 @@
           <img src="assets/logo-white.svg" alt="Eng Ponto" class="logo-full">
         </a>
         <p class="footer-desc">Ponto eletrônico e gestão de jornada para empresas de qualquer porte.</p>
-        <!-- TODO: substituir pelos links reais das redes sociais -->
         <div class="footer-social">
-          <a href="#" class="footer-social-icon" aria-label="Instagram">
+          <a href="https://www.instagram.com/orbytisbr/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <a href="#" class="footer-social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/orbitys/posts/?feedView=all" target="_blank" rel="noopener" class="footer-social-icon" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H2v13h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M10 9h4v2s1.2-2 4-2 5 2 5 6v8h-4v-7c0-2-1-3-3-3s-2 1.5-2 3v7h-4z"/></svg>
           </a>
         </div>
@@ -799,7 +823,7 @@
       <div class="footer-col">
         <span class="footer-col-title">Navegação</span>
         <a href="#como" class="footer-link">Como funciona</a>
-        <a href="#funcionalidades" class="footer-link">Funcionalidades</a>
+        <a href="#validacao" class="footer-link">Validação</a>
         <a href="#planos" class="footer-link">Planos</a>
         <a href="#faq" class="footer-link">Dúvidas</a>
       </div>
@@ -813,10 +837,10 @@
 
       <div class="footer-col">
         <span class="footer-col-title">Contato</span>
-        <!-- TODO: substituir pelo e-mail e domínio reais -->
-        <a href="mailto:contato@engponto.com.br" class="footer-link footer-link-icon">
+        <!-- TODO: confirmar o domínio real (engponto.com.br) e o link do site abaixo -->
+        <a href="mailto:comercial@orbytis.com.br" class="footer-link footer-link-icon">
           <span class="footer-contact-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
-          contato@engponto.com.br
+          comercial@orbytis.com.br
         </a>
         <a href="#" class="footer-link footer-link-icon">
           <span class="footer-contact-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
@@ -833,12 +857,11 @@
     </div>
   </footer>
 
-  <!-- TODO: substituir pelo número real do WhatsApp -->
-  <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.49.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35.19 0 .38 0 .54.01.17.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.57.17.28.75 1.24 1.61 2 1.11.99 2.04 1.3 2.32 1.44.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.64-.14.26.09 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.71-.17 1.39z"/></svg>
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=19"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>
