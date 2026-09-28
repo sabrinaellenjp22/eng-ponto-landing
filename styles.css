@@ -449,7 +449,7 @@ h3 {
 }
 .modos-card.is-active h3, .modos-card.is-active .modos-card-desc-text { color: var(--white); }
 .modos-card.is-active .modos-card-desc-text { color: rgba(255, 255, 255, 0.85); }
-.modos-card.is-active .modos-card-number { background: var(--white); color: var(--brand-deep); }
+.modos-card.is-active .modos-card-number { background: var(--brand-yellow); color: var(--ink-deep); }
 
 .modos-card-number {
   position: absolute;
