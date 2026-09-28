@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
   updateNavGlass();
 
 
+  /* 01b. MENU HAMBÚRGUER (mobile): abre/fecha o painel com os links e o CTA */
+  const navHamburger = document.querySelector('.nav-hamburger');
+  const navMobilePanel = document.querySelector('.nav-mobile-panel');
+  if (navHamburger && navMobilePanel) {
+    const closeNavMobile = () => {
+      navMobilePanel.classList.remove('is-open');
+      navHamburger.classList.remove('is-open');
+      navHamburger.setAttribute('aria-expanded', 'false');
+    };
+    navHamburger.addEventListener('click', () => {
+      const open = navMobilePanel.classList.toggle('is-open');
+      navHamburger.classList.toggle('is-open', open);
+      navHamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navMobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNavMobile));
+    window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) closeNavMobile(); });
+  }
+
+
   /* 02. RELÓGIO AO VIVO NO MOCK DO HERO */
   const clockElement = document.getElementById('hero-clock');
   function updateClock() {
@@ -241,18 +260,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 08b. PLANOS (mobile): as 3 fotos viram carrossel que avança sozinho a cada 4s; tocar/rolar reinicia a contagem */
   const planosBento = document.querySelector('.planos-bento');
-  if (planosBento && !prefersReducedMotion) {
+  if (planosBento) {
+    const items = planosBento.children;
+    const dots = document.querySelectorAll('.planos-bento-dot');
     let planosTimer;
+    const planosStep = () => items[1].offsetLeft - items[0].offsetLeft;
+    const planosIndex = () => Math.round(planosBento.scrollLeft / planosStep());
+    const planosGo = (i) => planosBento.scrollTo({ left: ((i + items.length) % items.length) * planosStep(), behavior: 'smooth' });
     const startPlanosTimer = () => {
       clearInterval(planosTimer);
-      planosTimer = setInterval(() => {
-        if (!comoMobile.matches) return;
-        const items = planosBento.children;
-        const step = items[1].offsetLeft - items[0].offsetLeft;
-        const next = (Math.round(planosBento.scrollLeft / step) + 1) % items.length;
-        planosBento.scrollTo({ left: next * step, behavior: 'smooth' });
-      }, 4000);
+      if (prefersReducedMotion) return;
+      planosTimer = setInterval(() => { if (comoMobile.matches) planosGo(planosIndex() + 1); }, 4000);
     };
+    planosBento.addEventListener('scroll', () => dots.forEach((d, i) => d.classList.toggle('is-active', i === planosIndex())), { passive: true });
+    dots.forEach((d, i) => d.addEventListener('click', () => { planosGo(i); startPlanosTimer(); }));
+    document.querySelectorAll('.planos-bento-arrow').forEach(a => a.addEventListener('click', () => { planosGo(planosIndex() + Number(a.dataset.dir)); startPlanosTimer(); }));
     ['pointerdown', 'wheel'].forEach(ev => planosBento.addEventListener(ev, startPlanosTimer, { passive: true }));
     startPlanosTimer();
   }

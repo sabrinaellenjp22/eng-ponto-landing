@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=175">
+  <link rel="stylesheet" href="styles.css?v=188">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -113,7 +113,20 @@
       </nav>
       <div class="nav-actions">
         <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn btn-primary">Fale conosco</a>
+        <button type="button" class="nav-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+
+    <div class="nav-mobile-panel" id="nav-mobile-panel">
+      <ul class="nav-mobile-links">
+        <li><a href="#como" class="nav-link">Como funciona</a></li>
+        <li><a href="#validacao" class="nav-link">Validação</a></li>
+        <li><a href="#planos" class="nav-link">Planos</a></li>
+        <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+      </ul>
+      <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn btn-primary">Fale conosco</a>
     </div>
   </header>
 
@@ -169,7 +182,7 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>De onde sua equipe estiver, o ponto já nasce em <span class="hl-yellow">conformidade.</span></h1>
-        <p class="lead">Ponto eletrônico no celular, no computador ou no totem:<br>o registro sai pronto pra fiscalização.</p>
+        <p class="lead">Ponto eletrônico no celular, no computador ou no totem: <br>o registro sai pronto pra fiscalização.</p>
 
         <ul class="plan-features hero-checklist">
           <li class="plan-feature-item"><span class="check">✓</span> <span>Importe o histórico do seu sistema atual, sem perder.</span></li>
@@ -191,7 +204,7 @@
   <section id="modos" class="section">
     <div class="container">
       <div class="modos-intro reveal-on-scroll">
-        <h2>Sua equipe bate o ponto <span class="text-gradient">onde for mais fácil</span></h2>
+        <h2>Sua equipe bate o ponto <span class="text-gradient h1-underline">onde for mais fácil</span></h2>
         <p class="lead">Celular pra quem trabalha externo, navegador pra quem está no escritório e totem pra ponto fixo: tudo cai na mesma apuração.</p>
       </div>
 
@@ -258,7 +271,7 @@
       <div class="offline-panel">
         <img class="offline-panel-bg" src="assets/section-offline-bg.svg" alt="" aria-hidden="true" loading="lazy">
         <div class="offline-content">
-          <h2>Reconhecimento facial offline no <span class="hl-yellow">Eng Ponto</span></h2>
+          <h2 class="reveal-on-scroll">Reconhecimento facial offline no <span class="hl-yellow h1-underline h1-underline--light">Eng Ponto</span></h2>
           <p class="lead offline-lead"><strong>Os colaboradores registram o ponto por reconhecimento facial mesmo sem internet.</strong> Quando os dispositivos voltam à rede, os registros são sincronizados automaticamente.</p>
           <ul class="plan-features hero-checklist">
             <li class="plan-feature-item"><span class="check">✓</span> A falta de sinal não interrompe o registro.</li>
@@ -339,7 +352,7 @@
   <section id="como" class="section como-panel">
     <img src="assets/decor-threads.svg" alt="" class="como-decor como-decor--bl" aria-hidden="true" loading="lazy">
     <div class="container">
-      <h2 class="como-intro reveal-on-scroll">O mês inteiro em <span class="hl-yellow">três movimentos</span>.</h2>
+      <h2 class="como-intro reveal-on-scroll">O mês inteiro em <span class="hl-yellow h1-underline h1-underline--light">três movimentos</span>.</h2>
       <p class="lead como-lead">Da marcação da batida ao fechamento do espelho, sem depender de planilha.</p>
 
       <div class="como-layout">
@@ -470,7 +483,7 @@
     <div class="container">
       <div class="custo-grid">
           <div>
-            <h2>O que você deixa de pagar <span class="hl-yellow">também conta.</span></h2>
+            <h2 class="reveal-on-scroll">O que você deixa de pagar <span class="hl-yellow h1-underline h1-underline--light">também conta.</span></h2>
 
             <div class="custo-list">
               <div class="custo-item reveal-on-scroll">
@@ -517,7 +530,7 @@
     <div class="container seguranca-layout">
       <div class="seguranca-content">
         <img src="assets/favicon.svg" alt="" class="seguranca-isotipo" aria-hidden="true">
-        <h2><span class="text-gradient">Mais segurança</span><br><span class="seguranca-accent">em cada registro.</span></h2>
+        <h2 class="reveal-on-scroll"><span class="text-gradient">Mais segurança</span><br><span class="seguranca-accent h1-underline">em cada registro.</span></h2>
 
         <div class="seguranca-photo-frame">
           <div class="seguranca-photo photo-img">
@@ -579,7 +592,7 @@
     <div class="container">
       <div class="planos-layout">
         <div class="planos-left">
-          <h2 class="planos-title">Um plano só, <span class="text-gradient">sem surpresa no boleto.</span></h2>
+          <h2 class="planos-title reveal-on-scroll">Um plano só, <span class="text-gradient h1-underline">sem surpresa no boleto.</span></h2>
 
           <div class="planos-bento">
             <div class="planos-bento-item planos-bento-item--top reveal-on-scroll">
@@ -626,6 +639,16 @@
                 <p>Suporte de verdade, com gente de verdade, sempre que precisar.</p>
               </div>
             </div>
+          </div>
+
+          <div class="planos-bento-nav">
+            <button type="button" class="planos-bento-arrow" data-dir="-1" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <div class="planos-bento-dots">
+              <button type="button" class="planos-bento-dot is-active" aria-label="Foto 1"></button>
+              <button type="button" class="planos-bento-dot" aria-label="Foto 2"></button>
+              <button type="button" class="planos-bento-dot" aria-label="Foto 3"></button>
+            </div>
+            <button type="button" class="planos-bento-arrow" data-dir="1" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
           </div>
         </div>
 
@@ -862,6 +885,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="app.js?v=23"></script>
+  <script src="app.js?v=25"></script>
 </body>
 </html>
