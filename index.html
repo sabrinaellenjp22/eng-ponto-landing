@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos da Aplicação -->
-  <link rel="stylesheet" href="styles.css?v=194">
+  <link rel="stylesheet" href="styles.css?v=195">
 
   <!-- Marcadores Estruturados JSON-LD (SEO) -->
   <script type="application/ld+json">
@@ -269,7 +269,10 @@
   <section id="offline" class="section">
     <div class="container">
       <div class="offline-panel">
-        <img class="offline-panel-bg" src="assets/section-offline-bg.png" alt="" aria-hidden="true" loading="lazy">
+        <picture>
+          <source media="(max-width: 960px)" srcset="assets/section-offline-bg-mobile.png">
+          <img class="offline-panel-bg" src="assets/section-offline-bg.png" alt="" aria-hidden="true" loading="lazy">
+        </picture>
         <div class="offline-content">
           <h2 class="reveal-on-scroll">Reconhecimento facial offline no <span class="hl-yellow h1-underline h1-underline--light">Eng Ponto</span></h2>
           <p class="lead offline-lead"><strong>Os colaboradores registram o ponto por reconhecimento facial mesmo sem internet.</strong> Quando os dispositivos voltam à rede, os registros são sincronizados automaticamente.</p>
@@ -681,7 +684,10 @@
           <p class="lead">As dúvidas mais comuns antes de contratar.</p>
           <!-- TODO: substituir pela foto definitiva -->
           <div class="faq-photo photo-img">
-            <img src="assets/faq-photo.jpg" alt="Mulher pensativa com a mão no queixo, em fundo amarelo" loading="lazy">
+            <picture>
+              <source media="(max-width: 960px)" srcset="assets/faq-photo-mobile.webp">
+              <img src="assets/faq-photo.jpg" alt="Mulher pensativa com a mão no queixo, em fundo amarelo" loading="lazy">
+            </picture>
           </div>
           <a href="https://wa.me/5583993378336" target="_blank" rel="noopener" class="btn faq-cta-btn">Perguntar a um especialista <span class="arrow" aria-hidden="true">→</span></a>
         </div>

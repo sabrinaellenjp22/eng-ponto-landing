@@ -969,6 +969,7 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   /* no mobile a foto da mulher some e o formulário vem depois do título, lista e CTAs */
   .hero-visual { position: relative; top: auto; right: auto; bottom: auto; transform: none; width: 100%; height: auto; display: flex; flex-direction: column; align-items: center; padding-inline: var(--container-pad); order: 2; margin-top: 24px; z-index: 1; }
   .hero-bg-vector { display: none; }
+  .blob-circle-hero { display: none; }
   .hero-badge { display: none; }
   .hero-photo-wrap { display: none; }
   .hero-form-card { position: relative; top: auto; right: auto; transform: none; width: 100%; max-width: 420px; margin-inline: auto; }
