@@ -1019,9 +1019,9 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .faq-intro { display: contents; }
   .faq-intro h2 { order: 1; }
   .faq-intro .lead { order: 2; }
-  .faq-photo { order: 3; flex: none; height: 200px; min-height: 0; }
+  .faq-photo { order: 3; flex: none; height: 200px; min-height: 0; max-width: none; }
   .faq-list { order: 4; }
-  .faq-cta-btn { order: 5; margin-top: 28px; }
+  .faq-cta-btn { order: 5; margin-top: 28px; max-width: none; }
   .como-step-body-inner .como-visual { height: auto; padding: 0 16px 16px; }
   .como-step-body-inner .como-video-panel { height: auto; }
   .como-step-body-inner .como-video-frame { height: auto; min-height: 0; aspect-ratio: 4 / 3; }
