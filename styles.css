@@ -884,6 +884,7 @@ h3 {
 .planos-card-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 20px; }
 .planos-card-price-value { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 800; color: var(--white); }
 .planos-card-price-unit { font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
+.planos-card-quote-lead { font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.85); margin-bottom: 20px; }
 .planos-card .plan-features { gap: 11px; margin-bottom: 24px; }
 .planos-card .plan-feature-item { font-size: 13px; }
 .plan-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
@@ -892,6 +893,36 @@ h3 {
 .plan-cta-btn { align-self: stretch; margin-top: auto; }
 .planos-card .plan-cta-btn { background-color: var(--brand-yellow); color: var(--ink-deep); box-shadow: var(--shadow-s); }
 .planos-card .plan-cta-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover-m); }
+
+.plan-features--grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; }
+
+#planos-v3 .planos-layout { grid-template-columns: 300px 1fr; }
+#planos-v3 .planos-card-badge { align-self: flex-start; }
+.planos-v3-title-wrap { position: relative; }
+.planos-v3-isotipo { position: absolute; z-index: 2; top: 50px; left: calc(100% - 90px); width: 84px; height: 84px; border-radius: 17%; box-shadow: var(--shadow-m); transform: translate(-50%, -50%) rotate(-9deg); pointer-events: none; }
+
+/* Planos (versão teste 4) */
+#planos-v4 { position: relative; overflow: hidden; }
+#planos-v4 .container { position: relative; z-index: 1; }
+.planos-v4-decor { position: absolute; width: clamp(220px, 30vw, 420px); height: auto; bottom: 0; left: 0; transform: scaleX(-1); pointer-events: none; z-index: 0; }
+.planos-v4-shell { display: grid; grid-template-columns: 1fr 440px; gap: 48px; align-items: center; max-width: 1180px; margin-inline: auto; }
+.planos-v4-left { display: flex; flex-direction: column; gap: 20px; }
+.planos-v4-bullets { margin-bottom: 0; }
+.planos-v4-bullets .plan-feature-item { color: var(--ink); font-size: 13.5px; }
+.planos-v4-quote { background-color: var(--brand); border: 1px solid var(--white); border-radius: clamp(24px, 3vw, 32px); padding: 24px 26px; box-shadow: var(--shadow-s); }
+.planos-v4-quote .eyebrow { color: rgba(255, 255, 255, 0.85); }
+.planos-v4-quote p { color: var(--white); margin: 6px 0 18px; }
+.planos-v4-cta { background-color: var(--brand-yellow); color: var(--ink-deep); }
+.planos-v4-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover-m); }
+.planos-v4-trust { font-size: 12.5px; color: var(--ink-2); }
+.planos-v4-right { position: relative; }
+.planos-v4-mosaic { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(2, 290px); gap: 14px; }
+.planos-v4-mosaic-item { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-m); }
+.planos-v4-mosaic-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.planos-v4-mosaic-tag { position: absolute; left: 12px; bottom: 12px; background-color: var(--brand-yellow); color: var(--ink-deep); font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: var(--radius-pill); text-transform: uppercase; letter-spacing: 0.03em; }
+.planos-v4-mark { position: absolute; width: 130px; height: 130px; opacity: 0.05; filter: brightness(0); pointer-events: none; z-index: 0; }
+.planos-v4-mark-a { top: -46px; right: -30px; transform: rotate(-10deg); }
+.planos-v4-mark-b { bottom: -40px; left: -34px; transform: rotate(9deg); }
 
 #faq { padding-block: clamp(48px, 6vw, 88px); }
 .faq-panel { background: var(--brand); }
@@ -989,6 +1020,10 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .validacao-visual-stat { right: auto; left: 50%; transform: translateX(-50%); }
   .seguranca-layout { grid-template-columns: 1fr; gap: 24px; }
   .seguranca-isotipo { display: none; }
+  .planos-v3-isotipo { display: none; }
+  #planos-v3 .planos-layout { grid-template-columns: 1fr; }
+  .planos-v4-shell { grid-template-columns: 1fr; gap: 28px; }
+  .planos-v4-mark, .planos-v4-decor { display: none; }
   .seguranca-photo-frame { flex: none; min-height: 0; aspect-ratio: 4 / 3; }
   .seguranca-panel { flex-direction: column; align-items: stretch; padding-block: 44px 32px; }
   .seguranca-visual { display: none; }
@@ -1015,6 +1050,7 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .planos-bento-dot::after { content: ''; position: absolute; inset: -8px; }
   .planos-bento-dot.is-active { opacity: 1; transform: scale(1.25); }
   .planos-card { padding: 28px; }
+  .plan-features--grid { grid-template-columns: 1fr; }
   .faq-layout { gap: 0; }
   .faq-intro { display: contents; }
   .faq-intro h2 { order: 1; }
