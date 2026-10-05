@@ -139,6 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
   comoMobile.addEventListener('change', placeComoVisual);
   placeComoVisual();
 
+  // botão de expandir: tela cheia no vídeo (iPhone só aceita o método webkitEnterFullscreen)
+  document.querySelector('.como-visual-chip')?.addEventListener('click', () => {
+    const enter = comoVideo.requestFullscreen || comoVideo.webkitRequestFullscreen || comoVideo.webkitEnterFullscreen;
+    if (enter) enter.call(comoVideo);
+  });
+
   function setComoOpen(index) {
     comoSteps.forEach((s, i) => {
       s.classList.toggle('is-open', i === index);
