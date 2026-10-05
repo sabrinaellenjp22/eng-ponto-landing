@@ -972,19 +972,28 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background-color: #25D366;
-  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-l);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
   z-index: 900;
-  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: whatsappPulse 2.6s ease-in-out infinite;
 }
-.whatsapp-float:hover { transform: scale(1.08); box-shadow: var(--shadow-hover-l); }
+.whatsapp-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32); }
+.whatsapp-float svg { width: 30px; height: 30px; }
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+@media (max-width: 640px) {
+  .whatsapp-float { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .whatsapp-float svg { width: 27px; height: 27px; }
+}
 
 .reveal-on-scroll { opacity: 0; translate: 0 22px; scale: 0.98; transition: opacity var(--t-slow) var(--ease), translate var(--t-slow) var(--ease), scale var(--t-slow) var(--ease); }
 .reveal-on-scroll.revealed { opacity: 1; translate: 0 0; scale: 1; }
@@ -1089,7 +1098,6 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
   .validacao-cards-grid { grid-template-columns: 1fr; }
   .planos-bento-chip { max-width: calc(100% - 24px); }
   .footer-grid { grid-template-columns: 1fr; }
-  .whatsapp-float { width: 48px; height: 48px; bottom: 16px; right: 16px; }
   #nav .btn { padding: 9px 20px; font-size: 14px; }
   .clientes-row { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
   .clientes-logos { justify-content: center; }
@@ -1102,5 +1110,5 @@ footer { background-color: #14163A; color: rgba(255, 255, 255, 0.6); font-size: 
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .reveal-on-scroll { opacity: 1 !important; translate: none !important; scale: none !important; }
-  .logo-pointer, .hero-badge, .seguranca-isotipo { animation: none !important; }
+  .logo-pointer, .hero-badge, .seguranca-isotipo, .whatsapp-float { animation: none !important; }
 }
